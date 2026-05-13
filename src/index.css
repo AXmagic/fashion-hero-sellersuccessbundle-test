@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FashionHero design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Warm cream / earthy editorial palette */
+    --background: 40 33% 97%;
+    --foreground: 25 15% 12%;
+
+    --cream: 40 38% 95%;
+    --cream-deep: 36 28% 90%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 15% 12%;
+
+    --primary: 25 15% 12%;
+    --primary-foreground: 40 38% 97%;
+
+    --secondary: 36 24% 92%;
+    --secondary-foreground: 25 15% 12%;
+
+    --muted: 36 20% 93%;
+    --muted-foreground: 25 8% 42%;
+
+    --accent: 30 35% 55%;
+    --accent-foreground: 40 38% 97%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 40 38% 97%;
+
+    --warning: 35 85% 48%;
+    --warning-foreground: 40 38% 97%;
+    --success: 145 45% 38%;
+    --success-foreground: 40 38% 97%;
+
+    --border: 30 12% 86%;
+    --input: 30 12% 86%;
+    --ring: 25 15% 12%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 12% 8%;
+    --foreground: 40 30% 95%;
+    --cream: 25 12% 12%;
+    --cream-deep: 25 12% 14%;
+    --card: 25 12% 10%;
+    --card-foreground: 40 30% 95%;
+    --popover: 25 12% 10%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 40 30% 95%;
+    --primary-foreground: 25 12% 8%;
+    --secondary: 25 8% 18%;
+    --secondary-foreground: 40 30% 95%;
+    --muted: 25 8% 18%;
+    --muted-foreground: 30 10% 65%;
+    --accent: 30 35% 55%;
+    --accent-foreground: 25 12% 8%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 40 30% 95%;
+    --border: 25 8% 22%;
+    --input: 25 8% 22%;
+    --ring: 40 30% 95%;
+    --warning: 35 85% 55%;
+    --warning-foreground: 25 12% 8%;
+    --success: 145 45% 50%;
+    --success-foreground: 25 12% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer components {
+  /* FashionHero pill button used across hero / categories / collections */
+  .fh-pill {
+    @apply inline-flex items-center justify-center border bg-transparent
+           text-[13px] font-medium tracking-normal
+           px-5 py-2.5 rounded-full transition-colors duration-300;
+  }
+}
