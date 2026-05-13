@@ -1,88 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* FashionHero design system. All colors HSL. */
+/* =========================================================================
+ * FashionHero / FIGS-derived design system (ported from Wearfigs DS)
+ * Editorial-utilitarian. Sharp corners. Heavy display type. Flat elevation.
+ * All color tokens are HSL CSS variables. Every token has a .dark mirror.
+ * ========================================================================= */
 
 @layer base {
   :root {
-    /* Warm cream / earthy editorial palette */
-    --background: 40 33% 97%;
-    --foreground: 25 15% 12%;
-
-    --cream: 40 38% 95%;
-    --cream-deep: 36 28% 90%;
-
+    /* Surfaces & ink */
+    --background: 36 20% 98%;
+    --foreground: 220 35% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 25 15% 12%;
-
+    --card-foreground: 220 35% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 25 15% 12%;
+    --popover-foreground: 220 35% 10%;
+    --muted: 36 14% 94%;
+    --muted-foreground: 220 12% 38%;
+    --secondary: 36 14% 94%;
+    --secondary-foreground: 220 35% 14%;
+    --border: 220 14% 88%;
+    --input: 220 14% 88%;
+    --ring: 220 60% 22%;
 
-    --primary: 25 15% 12%;
-    --primary-foreground: 40 38% 97%;
+    /* Legacy cream tokens (kept for back-compat with SellerShell) */
+    --cream: 36 14% 94%;
+    --cream-deep: 36 14% 90%;
 
-    --secondary: 36 24% 92%;
-    --secondary-foreground: 25 15% 12%;
+    /* Primary — neutral ink (deep charcoal-navy) */
+    --primary: 220 35% 10%;
+    --primary-foreground: 36 20% 98%;
+    --primary-50:  220 20% 96%;
+    --primary-100: 220 18% 90%;
+    --primary-200: 220 16% 80%;
+    --primary-300: 220 14% 66%;
+    --primary-400: 220 14% 50%;
+    --primary-500: 220 18% 36%;
+    --primary-600: 220 24% 24%;
+    --primary-700: 220 30% 18%;
+    --primary-800: 220 34% 13%;
+    --primary-900: 220 38% 8%;
 
-    --muted: 36 20% 93%;
-    --muted-foreground: 25 8% 42%;
+    /* Accent — FIGS deep navy */
+    --accent: 220 60% 22%;
+    --accent-foreground: 36 20% 98%;
+    --accent-50:  220 60% 96%;
+    --accent-100: 220 58% 90%;
+    --accent-200: 220 56% 80%;
+    --accent-300: 220 54% 64%;
+    --accent-400: 220 56% 46%;
+    --accent-500: 220 60% 32%;
+    --accent-600: 220 62% 24%;
+    --accent-700: 220 64% 18%;
+    --accent-800: 220 66% 14%;
+    --accent-900: 220 70% 9%;
 
-    --accent: 30 35% 55%;
-    --accent-foreground: 40 38% 97%;
+    /* Semantics */
+    --success: 152 48% 32%;
+    --success-foreground: 36 20% 98%;
+    --warning: 38 88% 48%;
+    --warning-foreground: 220 35% 10%;
+    --destructive: 358 64% 44%;
+    --destructive-foreground: 36 20% 98%;
+    --info: 212 70% 40%;
+    --info-foreground: 36 20% 98%;
 
-    --destructive: 0 70% 45%;
-    --destructive-foreground: 40 38% 97%;
+    /* Radius — sharp editorial */
+    --radius: 3px;
 
-    --warning: 35 85% 48%;
-    --warning-foreground: 40 38% 97%;
-    --success: 145 45% 38%;
-    --success-foreground: 40 38% 97%;
+    /* Type */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
 
-    --border: 30 12% 86%;
-    --input: 30 12% 86%;
-    --ring: 25 15% 12%;
-
-    --radius: 0.25rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 36 20% 98%;
+    --sidebar-foreground: 220 35% 10%;
+    --sidebar-primary: 220 60% 22%;
+    --sidebar-primary-foreground: 36 20% 98%;
+    --sidebar-accent: 36 14% 94%;
+    --sidebar-accent-foreground: 220 35% 14%;
+    --sidebar-border: 220 14% 88%;
+    --sidebar-ring: 220 60% 22%;
   }
 
   .dark {
-    --background: 25 12% 8%;
-    --foreground: 40 30% 95%;
-    --cream: 25 12% 12%;
-    --cream-deep: 25 12% 14%;
-    --card: 25 12% 10%;
-    --card-foreground: 40 30% 95%;
-    --popover: 25 12% 10%;
-    --popover-foreground: 40 30% 95%;
-    --primary: 40 30% 95%;
-    --primary-foreground: 25 12% 8%;
-    --secondary: 25 8% 18%;
-    --secondary-foreground: 40 30% 95%;
-    --muted: 25 8% 18%;
-    --muted-foreground: 30 10% 65%;
-    --accent: 30 35% 55%;
-    --accent-foreground: 25 12% 8%;
-    --destructive: 0 62.8% 40%;
-    --destructive-foreground: 40 30% 95%;
-    --border: 25 8% 22%;
-    --input: 25 8% 22%;
-    --ring: 40 30% 95%;
-    --warning: 35 85% 55%;
-    --warning-foreground: 25 12% 8%;
-    --success: 145 45% 50%;
-    --success-foreground: 25 12% 8%;
+    --background: 220 32% 7%;
+    --foreground: 36 20% 96%;
+    --card: 220 30% 10%;
+    --card-foreground: 36 20% 96%;
+    --popover: 220 30% 10%;
+    --popover-foreground: 36 20% 96%;
+    --muted: 220 22% 14%;
+    --muted-foreground: 220 12% 66%;
+    --secondary: 220 22% 14%;
+    --secondary-foreground: 36 20% 96%;
+    --border: 220 18% 20%;
+    --input: 220 18% 20%;
+    --ring: 220 60% 70%;
+
+    --cream: 220 22% 14%;
+    --cream-deep: 220 22% 12%;
+
+    --primary: 36 20% 96%;
+    --primary-foreground: 220 35% 10%;
+    --primary-50:  220 38% 8%;
+    --primary-100: 220 34% 13%;
+    --primary-200: 220 30% 18%;
+    --primary-300: 220 24% 24%;
+    --primary-400: 220 18% 36%;
+    --primary-500: 220 14% 50%;
+    --primary-600: 220 14% 66%;
+    --primary-700: 220 16% 80%;
+    --primary-800: 220 18% 90%;
+    --primary-900: 220 20% 96%;
+
+    --accent: 220 60% 70%;
+    --accent-foreground: 220 35% 10%;
+    --accent-50:  220 70% 9%;
+    --accent-100: 220 66% 14%;
+    --accent-200: 220 64% 18%;
+    --accent-300: 220 62% 24%;
+    --accent-400: 220 60% 32%;
+    --accent-500: 220 56% 46%;
+    --accent-600: 220 54% 64%;
+    --accent-700: 220 56% 80%;
+    --accent-800: 220 58% 90%;
+    --accent-900: 220 60% 96%;
+
+    --success: 152 50% 60%;
+    --success-foreground: 220 35% 10%;
+    --warning: 38 92% 62%;
+    --warning-foreground: 220 35% 10%;
+    --destructive: 358 70% 62%;
+    --destructive-foreground: 220 35% 10%;
+    --info: 212 78% 64%;
+    --info-foreground: 220 35% 10%;
+
+    --sidebar-background: 220 30% 10%;
+    --sidebar-foreground: 36 20% 96%;
+    --sidebar-primary: 220 60% 70%;
+    --sidebar-primary-foreground: 220 35% 10%;
+    --sidebar-accent: 220 22% 14%;
+    --sidebar-accent-foreground: 36 20% 96%;
+    --sidebar-border: 220 18% 20%;
+    --sidebar-ring: 220 60% 70%;
   }
 }
 
@@ -94,25 +159,67 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-sans);
     font-weight: 400;
   }
 
-  h1, h2, h3 {
-    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-    letter-spacing: 0.01em;
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
-  /* FashionHero pill button used across hero / categories / collections */
+  .font-display { font-family: var(--font-display); }
+  .font-sans    { font-family: var(--font-sans); }
+
+  .text-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .text-h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+  .text-h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .text-h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .text-overline {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* FashionHero pill — sharper, more editorial under new DS */
   .fh-pill {
     @apply inline-flex items-center justify-center border bg-transparent
            text-[13px] font-medium tracking-normal
-           px-5 py-2.5 rounded-full transition-colors duration-300;
+           px-5 py-2.5 rounded-sm transition-colors duration-200;
   }
 }
