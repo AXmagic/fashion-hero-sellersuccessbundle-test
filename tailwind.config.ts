@@ -95,6 +95,8 @@ export default {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
         display: ["Archivo", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        // Map legacy `font-serif` usages onto the new editorial display face
+        serif: ["Archivo", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
