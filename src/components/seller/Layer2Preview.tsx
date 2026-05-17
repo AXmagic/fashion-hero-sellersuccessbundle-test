@@ -94,7 +94,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
     {
       key: "trend_feed",
       title: "Trend Feed",
-      teaser: "Wzrost zapytań: linen blazer +180% w ostatnich 14 dniach.",
+      teaser: "Zanim wydasz na promowanie — sprawdź, które produkty naprawdę mają szansę się przebić. Zobacz, o co kupujący pytali w Twojej kategorii przez ostatnie 14 dni.",
       Icon: TrendingUp,
       preview: (
         <div className="h-full w-full">
@@ -165,7 +165,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
               </div>
               <div className="absolute inset-0 bg-background/30 flex items-center justify-center">
                 <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold bg-warning text-warning-foreground px-4 py-1.5 rounded-full">
-                  <Lock className="w-3 h-3" /> Odblokuj
+                  <Lock className="w-3 h-3" /> Sprawdź
                 </span>
               </div>
             </div>
