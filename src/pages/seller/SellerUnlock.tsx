@@ -134,7 +134,7 @@ export default function SellerUnlock() {
                   onClick={onPrimary}
                   className="mt-7 w-full bg-warning text-warning-foreground font-semibold text-[14px] py-3.5 rounded-full hover:opacity-90 transition-opacity"
                 >
-                  Sprawdź pełny dostęp
+                  Aktywuj pełny dostęp
                 </button>
 
                 <p className="text-[11.5px] text-muted-foreground mt-4 inline-flex items-center gap-1.5">
