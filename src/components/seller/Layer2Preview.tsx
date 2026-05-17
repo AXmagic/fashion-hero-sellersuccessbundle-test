@@ -105,7 +105,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
     {
       key: "returns_analyzer",
       title: "Returns Analyzer",
-      teaser: "Top 3 powody zwrotów w Twojej kategorii — i jak je ograniczyć.",
+      teaser: "Zarabiasz na produktach i oddajesz prawie to samo w zwrotach? Sprawdź Top 3 powody zwrotów w Twojej kategorii — i jak je ograniczyć.",
       Icon: PackageX,
       preview: (
         <ul className="text-[11px] space-y-1.5">
