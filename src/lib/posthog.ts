@@ -1,6 +1,6 @@
 import posthog from "posthog-js";
 
-const KEY = import.meta.env.VITE_POSTHOG_KEY as string | undefined;
+const KEY = "phc_zuAQvdKemCkQSman3wgUW2EhLyrTqCrPZDhuGkwJoQ4A";
 const HOST = "https://eu.i.posthog.com";
 
 let initialized = false;
