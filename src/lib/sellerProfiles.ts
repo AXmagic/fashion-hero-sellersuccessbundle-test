@@ -68,8 +68,8 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     returnsCost: 180,
     positionLabel: "Poza top 50 w kategorii „streetwear męski\"",
     positionTone: "muted",
-    hookHeadline: "Twoje dropy widzi 4× mniej osób niż mediana",
-    hookSub: "Marża jest świetna — problemem jest widoczność. Konkurencyjne marki streetwear zbierają zapytania, których nie widzisz.",
+    hookHeadline: "Twoje koszulki i bluzy są niewidoczne dla 9 na 10 kupujących.",
+    hookSub: "Zanim wydasz pierwsze złote na promowane oferty — dowiedz się, które z 20 produktów w ogóle mają szansę się przebić.",
     marginWeekly: [36, 37, 36, 38, 37, 38, 37, 38],
   },
 };
