@@ -20,6 +20,7 @@ const INCLUDED = [
   "Seller Economics Dashboard",
   "Price Monitor",
   "Trend Feed",
+  "Returns Analyzer",
   "Marża produktowa",
   "Raporty i eksport danych",
   "Priorytetowe wsparcie",
