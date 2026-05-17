@@ -51,8 +51,8 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     returnsCost: 3_400,
     positionLabel: "Top 25% GMV, ale -8pp marży vs konkurenci w odzieży damskiej",
     positionTone: "destructive",
-    hookHeadline: "Zwroty kosztują Cię ~3 400 zł miesięcznie",
-    hookSub: "Sprzedajesz dużo sukienek i topów, ale prawie połowa wraca. To Twoja największa dziura w marży.",
+    hookHeadline: "Zwroty kosztowały Cię w tym miesiącu 3 400 PLN",
+    hookSub: "Zarabiasz na sukienkach, a oddajesz to samo na zwrotach. Sprawdź dlaczego.",
     marginWeekly: [33, 34, 32, 33, 31, 32, 30, 31],
   },
   kamil: {
