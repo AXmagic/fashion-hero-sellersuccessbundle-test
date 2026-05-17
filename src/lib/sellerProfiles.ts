@@ -34,7 +34,7 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     returnsCost: 1_100,
     positionLabel: "-12% poniżej mediany cen w obuwiu",
     positionTone: "warning",
-    hookHeadline: "Twoja marża na obuwiu spadła o 5pp w ostatnich 30 dniach",
+    hookHeadline: "W tym miesiącu Twoja marża na butach spadła o 5 punktów.\nJeśli trend się utrzyma, stracisz ok. 700 PLN netto w kolejnych 30 dniach",
     hookSub: "Pełna analiza pokaże, które modele butów, koszty lub rabaty odpowiadają za spadek marży",
     marginWeekly: [29, 28, 27, 28, 26, 25, 24, 23],
   },
