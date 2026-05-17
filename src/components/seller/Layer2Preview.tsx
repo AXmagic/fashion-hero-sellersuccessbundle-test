@@ -75,7 +75,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
     {
       key: "price_monitor",
       title: "Price Monitor",
-      teaser: "5 produktów konkurencji potaniało w tym tygodniu w Twojej kategorii.",
+      teaser: "Poświęcasz 20 godzin miesięcznie na śledzenie cen w Excelu? Price Monitor zrobi to za Ciebie. Sprawdź ile produktów konkurencji potaniało w tym tygodniu w Twojej kategorii.",
       Icon: LineChart,
       preview: (
         <table className="w-full text-[11px]">
