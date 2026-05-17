@@ -66,7 +66,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           <AlertTriangle className="w-4 h-4 text-warning" />
         </span>
         <div className="flex-1 min-w-0">
-          <div className="text-[14px] font-semibold text-foreground whitespace-pre-line">{profile.hookHeadline}</div>
+          <div className="text-[14px] font-semibold text-foreground">{profile.hookHeadline}</div>
           <div className="text-[12.5px] text-muted-foreground mt-0.5 leading-relaxed">{profile.hookSub}</div>
         </div>
         <span className="shrink-0 inline-flex items-center gap-1 bg-warning text-warning-foreground text-[12.5px] font-semibold px-4 py-1.5 rounded-full">
