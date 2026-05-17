@@ -1,5 +1,6 @@
 import type { ProfileId } from "./sellerProfiles";
 import type { PricePoint } from "./wtpPrice";
+import { posthog } from "./posthog";
 
 export type WtpEventType =
   | "session_start"
@@ -30,6 +31,21 @@ export function logEvent(ev: Omit<WtpEvent, "ts">) {
     const arr: WtpEvent[] = raw ? JSON.parse(raw) : [];
     arr.push(full);
     localStorage.setItem(KEY, JSON.stringify(arr));
+  } catch {
+    /* ignore */
+  }
+  try {
+    if (posthog.__loaded) {
+      if (full.type === "session_start") {
+        posthog.register({ profile: full.profile, price: full.price });
+      }
+      posthog.capture(full.type, {
+        profile: full.profile,
+        price: full.price,
+        feature: full.feature,
+        email: full.email,
+      });
+    }
   } catch {
     /* ignore */
   }
