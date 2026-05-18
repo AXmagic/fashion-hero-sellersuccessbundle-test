@@ -94,7 +94,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
     {
       key: "trend_feed",
       title: "Trend Feed",
-      teaser: "Zanim wydasz na promowanie — sprawdź, które produkty naprawdę mają szansę się przebić. Zobacz, o co kupujący pytali w Twojej kategorii przez ostatnie 14 dni.",
+      teaser: "Sprawdź, które produkty w Twojej kategorii zyskują teraz na popularności — zanim zdecydujesz co promować albo co zamawiać. Zobacz, o co kupujący pytali w Twojej kategorii przez ostatnie 14 dni.",
       Icon: TrendingUp,
       preview: (
         <div className="h-full w-full">
