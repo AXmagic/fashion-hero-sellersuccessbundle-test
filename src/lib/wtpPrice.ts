@@ -10,9 +10,9 @@ export function getSessionPrice(profile: ProfileId): PricePoint {
   if (existing && POINTS.includes(Number(existing) as PricePoint)) {
     return Number(existing) as PricePoint;
   }
-  // Weighted: 499 = 50%, 399 = 25%, 299 = 25%
-  const r = Math.random();
-  const picked: PricePoint = r < 0.5 ? 499 : r < 0.75 ? 399 : 299;
+  // Equal distribution: each price point has 1/3 probability
+  const idx = Math.floor(Math.random() * POINTS.length);
+  const picked: PricePoint = POINTS[idx];
   sessionStorage.setItem(key, String(picked));
   return picked;
 }
