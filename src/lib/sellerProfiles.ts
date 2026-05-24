@@ -16,6 +16,7 @@ export interface SellerProfile {
   positionTone: "warning" | "destructive" | "muted";
   hookHeadline: string;
   hookSub: string;
+  positiveCards: [string, string]; // dwie pozytywne karty per profil
   // Sparkline data: last 8 weeks margin %
   marginWeekly: number[];
 }
