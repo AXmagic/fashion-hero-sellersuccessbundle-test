@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { AlertTriangle, ChevronRight, Calendar } from "lucide-react";
+import { AlertTriangle, ChevronRight, Calendar, CheckCircle } from "lucide-react";
 import type { SellerProfile } from "@/lib/sellerProfiles";
 import { logEvent } from "@/lib/wtpLog";
 import type { PricePoint } from "@/lib/wtpPrice";
