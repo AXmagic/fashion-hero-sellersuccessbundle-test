@@ -165,7 +165,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
               </div>
               <div className="absolute inset-0 bg-background/30 flex items-center justify-center">
                 <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold bg-warning text-warning-foreground px-4 py-1.5 rounded-full">
-                  <Lock className="w-3 h-3" /> Sprawdź
+                  <Lock className="w-3 h-3" /> Odblokuj dane
                 </span>
               </div>
             </div>
