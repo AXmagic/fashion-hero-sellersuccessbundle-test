@@ -79,6 +79,10 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     positionTone: "muted",
     hookHeadline: "Twoje koszulki i bluzy są niewidoczne dla 9 na 10 kupujących.",
     hookSub: "Zanim wydasz pierwsze złote na promowane oferty — dowiedz się, które z 20 produktów w ogóle mają szansę się przebić.",
+    positiveCards: [
+      "Streetwear rośnie najszybciej ze wszystkich kategorii na FashionHero w tym kwartale",
+      "3 Twoje produkty mają rosnący trend zapisów w tym tygodniu",
+    ],
     marginWeekly: [36, 37, 36, 38, 37, 38, 37, 38],
   },
 };
