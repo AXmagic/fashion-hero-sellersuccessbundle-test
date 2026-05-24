@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { AlertTriangle, ChevronRight, Calendar } from "lucide-react";
+import { AlertTriangle, ChevronRight, Calendar, CheckCircle } from "lucide-react";
 import type { SellerProfile } from "@/lib/sellerProfiles";
 import { logEvent } from "@/lib/wtpLog";
 import type { PricePoint } from "@/lib/wtpPrice";
@@ -116,6 +116,21 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           tone={profile.positionTone === "muted" ? "warning" : profile.positionTone}
           spark={positionSpark}
         />
+      </div>
+
+      {/* Positive cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {[profile.positiveCards[0], profile.positiveCards[1]].map((text, i) => (
+          <div
+            key={i}
+            className="rounded-xl bg-success/10 border border-success/25 px-4 py-3.5 flex items-start gap-3"
+          >
+            <span className="shrink-0 w-8 h-8 rounded-full bg-success/20 flex items-center justify-center">
+              <CheckCircle className="w-4 h-4 text-success" />
+            </span>
+            <div className="text-[13.5px] font-medium text-foreground leading-snug">{text}</div>
+          </div>
+        ))}
       </div>
 
       {/* Weekly margin chart */}
