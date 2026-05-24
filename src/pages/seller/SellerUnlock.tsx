@@ -70,13 +70,14 @@ export default function SellerUnlock() {
                 SELLER SUCCESS BUNDLE
               </span>
               <h1 className="font-serif text-4xl md:text-5xl leading-[1.1] mt-5">
-                Sprzedawaj mądrzej.
+                Odblokuj pełne dane
                 <br />
-                <span className="text-warning">Zarabiaj więcej.</span>
+                <span className="text-warning">swojego sklepu.</span>
               </h1>
               <p className="text-[14px] md:text-[15px] text-muted-foreground mt-5 leading-relaxed max-w-md">
-                Odblokuj pełny dostęp do danych, które pokazują co naprawdę zostaje
-                w Twojej kieszeni — po zwrotach, prowizjach i kosztach.
+                9 narzędzi, które zastępują Excela, ręczne śledzenie trendów i zgadywanie.
+                Dane z FashionHero — Twojego sklepu i Twojej kategorii. Wiesz co zarabiasz,
+                co się sprzedaje, i co naprawić jeszcze dziś.
               </p>
 
               <div className="grid grid-cols-3 gap-4 mt-8 max-w-md">
