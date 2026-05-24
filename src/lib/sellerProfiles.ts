@@ -31,12 +31,16 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     netRevenue: 14_100,
     marginPct: 23,
     marginDeltaPp: -5,
-    returnRatePct: 18,
+    returnRatePct: 14,
     returnsCost: 1_100,
     positionLabel: "-12% poniżej mediany cen w obuwiu",
     positionTone: "warning",
     hookHeadline: "W tym miesiącu Twoja marża na butach spadła o 5 punktów.\nJeśli trend się utrzyma, stracisz ok. 700 PLN netto w kolejnych 30 dniach",
     hookSub: "Pełna analiza pokaże, które modele butów, koszty lub rabaty odpowiadają za spadek marży",
+    positiveCards: [
+      "Twój return rate 14% jest w top 10% sprzedawców na FashionHero",
+      "Jesteś w top 15% marży w kategorii obuwie damskie",
+    ],
     marginWeekly: [29, 28, 27, 28, 26, 25, 24, 23],
   },
   bartek: {
