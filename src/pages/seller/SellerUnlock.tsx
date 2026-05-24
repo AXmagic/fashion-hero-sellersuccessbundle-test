@@ -45,7 +45,6 @@ export default function SellerUnlock() {
 
   if (!profile) return <Navigate to="/seller" replace />;
   const price = getSessionPrice(profile.id);
-  const featureLabel = FEATURE_LABELS[featureKey] ?? featureKey;
 
   const onPrimary = () => {
     logEvent({ type: "cta_click", profile: profile.id, price, feature: "primary_cta" });
