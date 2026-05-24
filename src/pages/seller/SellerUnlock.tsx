@@ -2,34 +2,27 @@ import { useEffect, useRef, useState } from "react";
 import { Navigate, useParams, useSearchParams, Link } from "react-router-dom";
 import { ChevronLeft, BarChart3, ShieldCheck, TrendingUp, Check, Lock, Sparkles } from "lucide-react";
 import SellerShell from "@/components/seller/SellerShell";
-import ConfirmDialog from "@/components/seller/ConfirmDialog";
+import WaitlistDialog from "@/components/seller/WaitlistDialog";
 import { getProfile } from "@/lib/sellerProfiles";
 import { getSessionPrice } from "@/lib/wtpPrice";
 import { logEvent } from "@/lib/wtpLog";
 
-const FEATURE_LABELS: Record<string, string> = {
-  price_monitor: "Price Monitor",
-  trend_feed: "Trend Feed",
-  returns_analyzer: "Returns Analyzer",
-  margin_breakdown: "Marża produktowa",
-  full_access: "Pełny dostęp",
-  analytics_offer: "Pełna analityka",
-};
-
 const INCLUDED = [
-  "Seller Economics Dashboard",
-  "Price Monitor",
-  "Trend Feed",
-  "Returns Analyzer",
-  "Marża produktowa",
-  "Raporty i eksport danych",
-  "Priorytetowe wsparcie",
+  "Sygnały trendów — bądź przed rynkiem",
+  "Benchmark cen i kalkulator break-even",
+  "Prawdziwy koszt zwrotów w PLN",
+  "Stockout alert powiązany z trendami",
+  "Rotacja produktów fast / mid / slow",
+  "Score listingu: opis · zdjęcia · cena",
+  "Zdjęcia klientek (UGC) z kolejką zatwierdzeń",
+  "AI: generator opisów produktów",
+  "Checklist „Co teraz” — priorytety na dziś",
 ];
 
 const VALUE_PROPS = [
-  { Icon: BarChart3, text: "Lepsze decyzje\noparte na danych" },
+  { Icon: BarChart3, text: "−12 godz./tydzień\nręcznej pracy" },
   { Icon: ShieldCheck, text: "Wyższa marża\ni mniej zwrotów" },
-  { Icon: TrendingUp, text: "Szybszy wzrost\nTwojego sklepu" },
+  { Icon: TrendingUp, text: "Decyzje oparte\nna Twoich danych" },
 ];
 
 export default function SellerUnlock() {
