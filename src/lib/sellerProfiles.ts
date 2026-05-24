@@ -58,6 +58,10 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     positionTone: "destructive",
     hookHeadline: "Zwroty kosztowały Cię w tym miesiącu 3 400 PLN",
     hookSub: "Zarabiasz na sukienkach, a oddajesz to samo na zwrotach. Sprawdź dlaczego.",
+    positiveCards: [
+      "Twój średni koszyk jest wyższy niż 90% sprzedawców w Twojej kategorii",
+      "Masz kupujących którzy zapisali Twoje produkty — ale jeszcze nie kupili",
+    ],
     marginWeekly: [33, 34, 32, 33, 31, 32, 30, 31],
   },
   kamil: {
