@@ -2,34 +2,27 @@ import { useEffect, useRef, useState } from "react";
 import { Navigate, useParams, useSearchParams, Link } from "react-router-dom";
 import { ChevronLeft, BarChart3, ShieldCheck, TrendingUp, Check, Lock, Sparkles } from "lucide-react";
 import SellerShell from "@/components/seller/SellerShell";
-import ConfirmDialog from "@/components/seller/ConfirmDialog";
+import WaitlistDialog from "@/components/seller/WaitlistDialog";
 import { getProfile } from "@/lib/sellerProfiles";
 import { getSessionPrice } from "@/lib/wtpPrice";
 import { logEvent } from "@/lib/wtpLog";
 
-const FEATURE_LABELS: Record<string, string> = {
-  price_monitor: "Price Monitor",
-  trend_feed: "Trend Feed",
-  returns_analyzer: "Returns Analyzer",
-  margin_breakdown: "Marża produktowa",
-  full_access: "Pełny dostęp",
-  analytics_offer: "Pełna analityka",
-};
-
 const INCLUDED = [
-  "Seller Economics Dashboard",
-  "Price Monitor",
-  "Trend Feed",
-  "Returns Analyzer",
-  "Marża produktowa",
-  "Raporty i eksport danych",
-  "Priorytetowe wsparcie",
+  "Sygnały trendów — bądź przed rynkiem",
+  "Benchmark cen i kalkulator break-even",
+  "Prawdziwy koszt zwrotów w PLN",
+  "Stockout alert powiązany z trendami",
+  "Rotacja produktów fast / mid / slow",
+  "Score listingu: opis · zdjęcia · cena",
+  "Zdjęcia klientek (UGC) z kolejką zatwierdzeń",
+  "AI: generator opisów produktów",
+  "Checklist „Co teraz” — priorytety na dziś",
 ];
 
 const VALUE_PROPS = [
-  { Icon: BarChart3, text: "Lepsze decyzje\noparte na danych" },
+  { Icon: BarChart3, text: "−12 godz./tydzień\nręcznej pracy" },
   { Icon: ShieldCheck, text: "Wyższa marża\ni mniej zwrotów" },
-  { Icon: TrendingUp, text: "Szybszy wzrost\nTwojego sklepu" },
+  { Icon: TrendingUp, text: "Decyzje oparte\nna Twoich danych" },
 ];
 
 export default function SellerUnlock() {
@@ -52,7 +45,6 @@ export default function SellerUnlock() {
 
   if (!profile) return <Navigate to="/seller" replace />;
   const price = getSessionPrice(profile.id);
-  const featureLabel = FEATURE_LABELS[featureKey] ?? featureKey;
 
   const onPrimary = () => {
     logEvent({ type: "cta_click", profile: profile.id, price, feature: "primary_cta" });
@@ -78,13 +70,14 @@ export default function SellerUnlock() {
                 SELLER SUCCESS BUNDLE
               </span>
               <h1 className="font-serif text-4xl md:text-5xl leading-[1.1] mt-5">
-                Sprzedawaj mądrzej.
+                Odblokuj pełne dane
                 <br />
-                <span className="text-warning">Zarabiaj więcej.</span>
+                <span className="text-warning">swojego sklepu.</span>
               </h1>
               <p className="text-[14px] md:text-[15px] text-muted-foreground mt-5 leading-relaxed max-w-md">
-                Odblokuj pełny dostęp do danych, które pokazują co naprawdę zostaje
-                w Twojej kieszeni — po zwrotach, prowizjach i kosztach.
+                9 narzędzi, które zastępują Excela, ręczne śledzenie trendów i zgadywanie.
+                Dane z FashionHero — Twojego sklepu i Twojej kategorii. Wiesz co zarabiasz,
+                co się sprzedaje, i co naprawić jeszcze dziś.
               </p>
 
               <div className="grid grid-cols-3 gap-4 mt-8 max-w-md">
@@ -145,15 +138,13 @@ export default function SellerUnlock() {
             </div>
           </div>
 
-          {featureKey !== "full_access" && (
-            <p className="text-[12px] text-muted-foreground mt-6 text-center">
-              Wybrałeś: <span className="text-foreground font-medium">{featureLabel}</span> — to narzędzie jest częścią pełnego pakietu.
-            </p>
-          )}
+          <p className="text-[12px] text-muted-foreground mt-6 text-center">
+            Cena obejmuje wszystkie 9 narzędzi. Bez ukrytych opłat. Rezygnacja w dowolnym momencie.
+          </p>
         </div>
       </div>
 
-      <ConfirmDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
+      <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
     </SellerShell>
   );
 }
