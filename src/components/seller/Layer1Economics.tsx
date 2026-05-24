@@ -70,7 +70,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           <div className="text-[12.5px] text-muted-foreground mt-0.5 leading-relaxed">{profile.hookSub}</div>
         </div>
         <span className="shrink-0 inline-flex items-center gap-1 bg-warning text-warning-foreground text-[12.5px] font-semibold px-4 py-1.5 rounded-full">
-          Zobacz raport
+          Odblokuj raport
           <ChevronRight className="w-3.5 h-3.5" />
         </span>
       </button>
