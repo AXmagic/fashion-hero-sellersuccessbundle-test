@@ -138,15 +138,13 @@ export default function SellerUnlock() {
             </div>
           </div>
 
-          {featureKey !== "full_access" && (
-            <p className="text-[12px] text-muted-foreground mt-6 text-center">
-              Wybrałeś: <span className="text-foreground font-medium">{featureLabel}</span> — to narzędzie jest częścią pełnego pakietu.
-            </p>
-          )}
+          <p className="text-[12px] text-muted-foreground mt-6 text-center">
+            Cena obejmuje wszystkie 9 narzędzi. Bez ukrytych opłat. Rezygnacja w dowolnym momencie.
+          </p>
         </div>
       </div>
 
-      <ConfirmDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
+      <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
     </SellerShell>
   );
 }
