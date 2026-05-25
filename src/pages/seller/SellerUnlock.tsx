@@ -1273,7 +1273,13 @@ export default function SellerUnlock() {
 
       <ScrollToTop />
 
+      <NpsFollowupDialog
+        open={followupOpen}
+        onClose={onFollowupClose}
+        onSubmit={onFollowupSubmit}
+      />
       <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
+
     </SellerShell>
   );
 }
