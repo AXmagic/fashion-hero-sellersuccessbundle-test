@@ -296,7 +296,7 @@ export default function SellerUnlock() {
           <div className="flex flex-col gap-8">
             {/* Tool 1 — Sygnały trendów */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 01
@@ -409,7 +409,7 @@ export default function SellerUnlock() {
 
             {/* Tool 2 — Benchmark cen */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 02
@@ -500,7 +500,7 @@ export default function SellerUnlock() {
 
             {/* Tool 3 — Stockout Alert */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 03
@@ -635,7 +635,7 @@ export default function SellerUnlock() {
 
             {/* Tool 4 — Prawdziwy koszt zwrotów */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 04
@@ -741,7 +741,7 @@ export default function SellerUnlock() {
 
             {/* Tool 5 — Rotacja produktów */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 05
@@ -841,7 +841,7 @@ export default function SellerUnlock() {
 
             {/* Tool 6 — Score listingu */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 06
@@ -923,7 +923,7 @@ export default function SellerUnlock() {
 
             {/* Tool 7 — UGC */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 07
@@ -1019,7 +1019,7 @@ export default function SellerUnlock() {
 
             {/* Tool 8 — AI opisy */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 08
@@ -1088,7 +1088,7 @@ export default function SellerUnlock() {
 
             {/* Tool 9 — Checklist */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
+              <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 09
