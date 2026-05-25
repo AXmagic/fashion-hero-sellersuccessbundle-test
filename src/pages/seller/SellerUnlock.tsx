@@ -112,7 +112,7 @@ export default function SellerUnlock() {
                 co się sprzedaje, i co naprawić jeszcze dziś.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mt-8 max-w-md">
+              <div className="hidden lg:grid grid-cols-3 gap-4 mt-8 max-w-md">
                 {VALUE_PROPS.map(({ Icon, text }) => (
                   <div key={text} className="flex flex-col items-center text-center gap-2">
                     <span className="w-11 h-11 rounded-full bg-card border border-warning/30 flex items-center justify-center">
@@ -125,7 +125,7 @@ export default function SellerUnlock() {
                 ))}
               </div>
 
-              <p className="text-muted-foreground mt-8 leading-relaxed max-w-md text-sm">
+              <p className="hidden lg:block text-muted-foreground mt-8 leading-relaxed max-w-md text-sm">
                 Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
                 <br />
                 Masz pytania?{" "}
