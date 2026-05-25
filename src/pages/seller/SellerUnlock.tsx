@@ -6,6 +6,37 @@ import WaitlistDialog from "@/components/seller/WaitlistDialog";
 import { getProfile } from "@/lib/sellerProfiles";
 import { getSessionPrice } from "@/lib/wtpPrice";
 import { logEvent } from "@/lib/wtpLog";
+import personaBartek from "@/assets/persona-bartek.jpg";
+import personaDorota from "@/assets/persona-dorota.jpg";
+import personaKamil from "@/assets/persona-kamil.jpg";
+
+const PERSONAS = [
+  {
+    name: "Bartek",
+    meta: "Premium odzież · 45k zł GMV/mies.",
+    photo: personaBartek,
+    pain:
+      "Tracił 7 godz./tydzień na ręczne śledzenie trendów. Nie widział, że 19 900 zł ginie miesięcznie w zwrotach.",
+    gain: "Sygnały trendów i UGC obniżają zwroty o 13 pp.",
+  },
+  {
+    name: "Dorota",
+    meta: "Obuwie · top 11% return rate na platformie",
+    photo: personaDorota,
+    pain:
+      "5 godz./tydzień w Excelu na śledzenie cen. Nie wiedziała, że jest jednym z najcenniejszych sprzedawców platformy.",
+    gain: "Automatyczny benchmark z kalkulatorem break-even.",
+  },
+  {
+    name: "Kamil",
+    meta: "Streetwear · nowy seller, ryzyko churnu",
+    photo: personaKamil,
+    pain:
+      "Pozycja #247 w kategorii. Algorytm go nie widział — błędne koło braku danych.",
+    gain: "Score listingu + AI opisy = lepsza konwersja bez przepalania budżetu.",
+  },
+];
+
 
 const INCLUDED = [
   "Sygnały trendów — bądź przed rynkiem",
@@ -142,7 +173,60 @@ export default function SellerUnlock() {
             Cena obejmuje wszystkie 9 narzędzi. Bez ukrytych opłat. Rezygnacja w dowolnym momencie.
           </p>
         </div>
+
+        {/* Dla kogo */}
+        <section className="mt-16 md:mt-20">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+              Dla kogo jest Seller Success Bundle
+            </h2>
+            <p className="text-[14px] text-muted-foreground mt-3">
+              Trzy realne sytuacje sprzedawców FashionHero — i to, co pakiet zmienia w ich codziennej pracy.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PERSONAS.map((p) => (
+              <article
+                key={p.name}
+                className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={p.photo}
+                    alt={`${p.name} — ${p.meta}`}
+                    loading="lazy"
+                    width={768}
+                    height={576}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6 flex flex-col gap-4 flex-1">
+                  <div>
+                    <h3 className="font-serif text-2xl leading-tight">{p.name}</h3>
+                    <p className="text-[12.5px] text-muted-foreground mt-1">{p.meta}</p>
+                  </div>
+
+                  <div>
+                    <span className="text-[10.5px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                      Ból
+                    </span>
+                    <p className="text-[13.5px] mt-1.5 leading-relaxed">{p.pain}</p>
+                  </div>
+
+                  <div className="mt-auto pt-4 border-t border-border">
+                    <span className="text-[10.5px] font-semibold uppercase tracking-[1.4px] text-warning">
+                      Z pakietem
+                    </span>
+                    <p className="text-[13.5px] mt-1.5 leading-relaxed">{p.gain}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
+
 
       <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
     </SellerShell>
