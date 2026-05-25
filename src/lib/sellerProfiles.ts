@@ -87,6 +87,11 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     hookHeadline: "Twoje koszulki i bluzy są niewidoczne dla 9 na 10 kupujących.",
     hookSub: "Zanim wydasz pierwsze złote na promowane oferty — dowiedz się, które z 20 produktów w ogóle mają szansę się przebić.",
     marginWeekly: [36, 37, 36, 38, 37, 38, 37, 38],
+    dataWindowDays: 90,
+    dataWindowLabel: "1.02 – 30.04.2026",
+    txCount: 142,
+    returnsCount: 13,
+    categoryPeerCount: 736,
   },
 };
 
