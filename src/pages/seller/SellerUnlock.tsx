@@ -84,23 +84,25 @@ export default function SellerUnlock() {
 
   const onPrimary = () => {
     logEvent({ type: "cta_click", profile: profile.id, price, feature: "primary_cta" });
-    if (isCritic(profile.id)) {
+    setOpen(true);
+  };
+
+  const onWaitlistOpenChange = (v: boolean) => {
+    setOpen(v);
+    if (!v && isCritic(profile.id)) {
       setFollowupOpen(true);
-    } else {
-      setOpen(true);
     }
   };
 
   const onFollowupSubmit = (text: string) => {
     logEvent({ type: "nps_followup_submit", profile: profile.id, price, nps_followup: text });
     setFollowupOpen(false);
-    setOpen(true);
   };
 
   const onFollowupClose = () => {
     setFollowupOpen(false);
-    setOpen(true);
   };
+
 
   return (
     <SellerShell profile={profile}>
@@ -1278,7 +1280,7 @@ export default function SellerUnlock() {
         onClose={onFollowupClose}
         onSubmit={onFollowupSubmit}
       />
-      <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
+      <WaitlistDialog open={open} onOpenChange={onWaitlistOpenChange} profile={profile.id} price={price} />
 
     </SellerShell>
   );
