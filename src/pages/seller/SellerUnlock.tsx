@@ -293,7 +293,7 @@ export default function SellerUnlock() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-12 md:gap-20">
             {/* Tool 1 — Sygnały trendów */}
             <article className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.18)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="p-8 md:p-10 flex flex-col gap-6 lg:border-r border-foreground/5">
