@@ -977,8 +977,8 @@ export default function SellerUnlock() {
                         { label: "Zatwierdzenie", value: "Ręczne" },
                       ].map((f) => (
                         <div key={f.label} className="rounded-lg border border-border bg-background px-2.5 sm:px-3 py-2">
-                          <p className="text-[14px] text-muted-foreground">{f.label}</p>
-                          <p className="text-[14px] font-semibold mt-0.5">{f.value}</p>
+                          <p className="text-[11px] sm:text-[14px] text-muted-foreground leading-tight">{f.label}</p>
+                          <p className="text-[12px] sm:text-[14px] font-semibold mt-1 leading-tight">{f.value}</p>
                         </div>
                       ))}
                     </div>
