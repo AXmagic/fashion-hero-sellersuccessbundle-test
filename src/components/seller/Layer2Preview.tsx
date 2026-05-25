@@ -158,6 +158,11 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
             </div>
             <p className="text-[13px] text-muted-foreground leading-relaxed">{f.teaser}</p>
 
+            <div className="rounded-md bg-warning/10 border border-warning/25 px-3 py-2 text-[12px] leading-relaxed text-foreground">
+              <span className="font-semibold text-warning">Wpływ:</span>{" "}
+              <span className="text-muted-foreground">{f.impact}</span>
+            </div>
+
             {/* Blurred preview */}
             <div className="relative mt-2 h-[120px] bg-cream overflow-hidden">
               <div
@@ -169,7 +174,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
               </div>
               <div className="absolute inset-0 bg-background/30 flex items-center justify-center">
                 <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold bg-warning text-warning-foreground px-4 py-1.5 rounded-full">
-                  <Lock className="w-3 h-3" /> Odblokuj dane
+                  <Lock className="w-3 h-3" /> Dowiedz się więcej
                 </span>
               </div>
             </div>
