@@ -183,11 +183,16 @@ export default function SellerUnlock() {
 
         {/* Dla kogo */}
         <section className="mt-16 md:mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.6px] text-muted-foreground">
+              <span className="w-6 h-px bg-border" />
+              Dla kogo
+              <span className="w-6 h-px bg-border" />
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mt-4">
               Jeden pakiet. Różne problemy. Ten sam efekt: lepsza sprzedaż.
             </h2>
-            <p className="text-[14px] text-muted-foreground mt-3">
+            <p className="text-[14px] text-muted-foreground mt-3 leading-relaxed">
               Niezależnie od tego, czy dopiero startujesz, czy sprzedajesz premium za dziesiątki tysięcy miesięcznie — Seller Success Bundle pomaga uporządkować i przyspieszyć rozwój.
             </p>
           </div>
@@ -196,9 +201,9 @@ export default function SellerUnlock() {
             {PERSONAS.map((p) => (
               <article
                 key={p.name}
-                className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
+                className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col"
               >
-                <div className="px-6 pt-6 pb-5 flex items-center gap-3.5 border-b border-border">
+                <div className="px-6 pt-6 pb-5 flex items-center gap-3.5 border-b border-border/40">
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-muted shrink-0 ring-1 ring-border/60">
                     <img
                       src={p.photo}
@@ -244,11 +249,16 @@ export default function SellerUnlock() {
 
         {/* Opis narzędzi */}
         <section className="mt-16 md:mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.6px] text-muted-foreground">
+              <span className="w-6 h-px bg-border" />
+              Co dostajesz
+              <span className="w-6 h-px bg-border" />
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mt-4">
               Co dokładnie dostajesz w pakiecie
             </h2>
-            <p className="text-[14px] text-muted-foreground mt-3">
+            <p className="text-[14px] text-muted-foreground mt-3 leading-relaxed">
               Każde narzędzie rozwiązuje konkretny ból sprzedawcy — i pokazuje mierzalny efekt.
             </p>
           </div>
@@ -326,17 +336,19 @@ export default function SellerUnlock() {
                       },
                     ].map((row) => (
                       <li key={row.name} className="px-6 py-4 flex items-center gap-4">
-                        <span
-                          className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-[14px] font-semibold ${
-                            row.tone === "hot"
-                              ? "bg-warning/15 text-warning"
-                              : row.tone === "up"
-                              ? "bg-foreground/10 text-foreground"
-                              : "bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          <row.Icon className="w-3.5 h-3.5" />
-                          {row.label}
+                        <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.2px] w-[88px] shrink-0">
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              row.tone === "hot"
+                                ? "bg-warning"
+                                : row.tone === "up"
+                                ? "bg-foreground"
+                                : "bg-muted-foreground/50"
+                            }`}
+                          />
+                          <span className={row.tone === "flat" ? "text-muted-foreground" : "text-foreground"}>
+                            {row.label}
+                          </span>
                         </span>
                         <div className="flex-1 min-w-0">
                           <p className="text-[14px] font-medium truncate">{row.name}</p>
@@ -420,7 +432,7 @@ export default function SellerUnlock() {
                       <div
                         key={f.label}
                         className={`rounded-lg border px-3 py-2.5 ${
-                          f.accent ? "border-warning/40 bg-warning/5" : "border-border bg-background"
+                          f.accent ? "border-l-2 border-warning bg-muted/30" : "border-border bg-background"
                         }`}
                       >
                         <p className="text-[14px] text-muted-foreground">{f.label}</p>
@@ -505,7 +517,7 @@ export default function SellerUnlock() {
                       <div className="flex-1 flex flex-col gap-2">
                         <div className="rounded-lg border border-border bg-background px-3 py-2.5">
                           <div className="flex items-center gap-2">
-                            <TrendingUp className="w-3.5 h-3.5 text-warning" />
+                            <TrendingUp className="w-3.5 h-3.5 text-foreground/70" strokeWidth={1.6} />
                             <span className="text-[14px] font-semibold">Trend Feed</span>
                           </div>
                           <p className="text-[14px] text-muted-foreground mt-1 leading-snug">
@@ -514,7 +526,7 @@ export default function SellerUnlock() {
                         </div>
                         <div className="rounded-lg border border-border bg-background px-3 py-2.5">
                           <div className="flex items-center gap-2">
-                            <RotateCw className="w-3.5 h-3.5 text-warning" />
+                            <RotateCw className="w-3.5 h-3.5 text-foreground/70" strokeWidth={1.6} />
                             <span className="text-[14px] font-semibold">Rotacja</span>
                           </div>
                           <p className="text-[14px] text-muted-foreground mt-1 leading-snug">
@@ -528,7 +540,7 @@ export default function SellerUnlock() {
                       <div className="flex-1 flex items-center">
                         <div className="w-full rounded-lg border border-warning/40 bg-warning/10 px-3 py-3">
                           <div className="flex items-center gap-2">
-                            <PackageX className="w-4 h-4 text-warning" />
+                            <PackageX className="w-4 h-4 text-warning" strokeWidth={1.8} />
                             <span className="text-[14px] font-semibold">Stockout Alert</span>
                           </div>
                           <p className="text-[14px] mt-1 leading-snug">
@@ -551,10 +563,10 @@ export default function SellerUnlock() {
                         key={i}
                         className={`rounded-lg border px-3 py-2.5 ${
                           c.tone === "warning"
-                            ? "border-warning/40 bg-warning/5"
+                            ? "border-l-2 border-warning bg-muted/30"
                             : c.tone === "muted"
                             ? "border-border bg-background"
-                            : "border-dashed border-border bg-muted/30"
+                            : "border-dashed border-border/50 bg-background"
                         }`}
                       >
                         <div className="flex items-center gap-1.5 text-[14px]">
@@ -633,7 +645,7 @@ export default function SellerUnlock() {
                 <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
                   {/* Benchmark */}
                   <div className="p-5 border-b border-border grid grid-cols-2 gap-3">
-                    <div className="rounded-lg border border-warning/40 bg-warning/5 px-4 py-3">
+                    <div className="rounded-lg border border-l-2 border-warning bg-muted/30 px-4 py-3">
                       <p className="text-[14px] text-muted-foreground">Twój return rate</p>
                       <p className="font-serif text-[24px] text-warning mt-1 leading-none">28%</p>
                       <p className="text-[14px] font-semibold mt-2">19 900 zł / mies.</p>
@@ -769,17 +781,19 @@ export default function SellerUnlock() {
                       },
                     ].map((row) => (
                       <li key={row.name} className="px-6 py-4 flex items-center gap-3">
-                        <span
-                          className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-[14px] font-semibold ${
-                            row.tone === "warning"
-                              ? "bg-warning/15 text-warning"
-                              : row.tone === "neutral"
-                              ? "bg-foreground/10 text-foreground"
-                              : "bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          <row.Icon className="w-3.5 h-3.5" />
-                          {row.status}
+                        <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.2px] w-[76px] shrink-0">
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              row.tone === "warning"
+                                ? "bg-warning"
+                                : row.tone === "neutral"
+                                ? "bg-foreground"
+                                : "bg-muted-foreground/50"
+                            }`}
+                          />
+                          <span className={row.tone === "muted" ? "text-muted-foreground" : "text-foreground"}>
+                            {row.status}
+                          </span>
                         </span>
                         <div className="flex-1 min-w-0">
                           <p className="text-[14px] font-medium truncate">{row.name}</p>
@@ -920,10 +934,10 @@ export default function SellerUnlock() {
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-[14px] font-semibold">Automatyzacja UGC</span>
                       <span className="inline-flex items-center gap-2 text-[14px]">
-                        <span className="relative inline-block w-9 h-5 rounded-full bg-warning">
+                        <span className="relative inline-block w-9 h-5 rounded-full bg-foreground">
                           <span className="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-card" />
                         </span>
-                        <span className="text-warning font-semibold">ON</span>
+                        <span className="text-foreground font-semibold uppercase tracking-[1.2px] text-[11px]">ON</span>
                       </span>
                     </div>
                     <div className="grid grid-cols-3 gap-2.5">
