@@ -75,11 +75,6 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
         </span>
       </button>
 
-        <span className="shrink-0 inline-flex items-center gap-1 bg-warning text-warning-foreground text-[12.5px] font-semibold px-4 py-1.5 rounded-full">
-          Odblokuj raport
-          <ChevronRight className="w-3.5 h-3.5" />
-        </span>
-      </button>
 
       <p className="text-[11.5px] text-muted-foreground -mt-2 px-1">
         Trend wyliczony z {profile.txCount} transakcji w ostatnich {profile.dataWindowDays} dniach ({profile.dataWindowLabel}).
