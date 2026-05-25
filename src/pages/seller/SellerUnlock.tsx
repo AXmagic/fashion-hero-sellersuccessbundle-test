@@ -112,7 +112,7 @@ export default function SellerUnlock() {
                 co się sprzedaje, i co naprawić jeszcze dziś.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mt-8 max-w-md">
+              <div className="hidden lg:grid grid-cols-3 gap-4 mt-8 max-w-md">
                 {VALUE_PROPS.map(({ Icon, text }) => (
                   <div key={text} className="flex flex-col items-center text-center gap-2">
                     <span className="w-11 h-11 rounded-full bg-card border border-warning/30 flex items-center justify-center">
@@ -125,7 +125,7 @@ export default function SellerUnlock() {
                 ))}
               </div>
 
-              <p className="text-muted-foreground mt-8 leading-relaxed max-w-md text-sm">
+              <p className="hidden lg:block text-muted-foreground mt-8 leading-relaxed max-w-md text-sm">
                 Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
                 <br />
                 Masz pytania?{" "}
@@ -178,6 +178,35 @@ export default function SellerUnlock() {
                   <span>Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Bez zobowiązań — anuluj w dowolnym momencie.</span>
                 </p>
               </div>
+            </div>
+
+            {/* MOBILE ONLY: value props + contact moved below pricing card */}
+            <div className="lg:hidden mt-8">
+              <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                {VALUE_PROPS.map(({ Icon, text }) => (
+                  <div key={text} className="flex flex-col items-center text-center gap-2">
+                    <span className="w-11 h-11 rounded-full bg-card border border-warning/30 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-warning" strokeWidth={1.6} />
+                    </span>
+                    <span className="text-[11.5px] text-foreground/80 leading-snug whitespace-pre-line">
+                      {text}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-muted-foreground mt-8 leading-relaxed max-w-md text-sm mx-auto text-center">
+                Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
+                <br />
+                Masz pytania?{" "}
+                <a
+                  href="mailto:sellers@fashionhero.pl"
+                  className="underline underline-offset-2 hover:text-foreground"
+                >
+                  Napisz do nas
+                </a>{" "}
+                — odpowiadamy w 24h.
+              </p>
             </div>
           </div>
         </div>
