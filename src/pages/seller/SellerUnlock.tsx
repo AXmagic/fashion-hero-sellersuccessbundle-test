@@ -1161,10 +1161,63 @@ export default function SellerUnlock() {
             </article>
           </div>
         </section>
+
+        {/* Final pricing + CTA — minimal */}
+        <section className="mt-16 md:mt-20 mb-8">
+          <div className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] px-8 md:px-12 py-10 md:py-12 flex flex-col items-center text-center max-w-2xl mx-auto">
+            <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-muted-foreground">
+              Seller Success Bundle
+            </span>
+            <div className="flex items-baseline gap-1.5 mt-4">
+              <span className="font-serif text-[56px] leading-none">{price}</span>
+              <span className="text-[15px] font-semibold">PLN</span>
+              <span className="text-[14px] text-muted-foreground">/ miesiąc</span>
+            </div>
+            <p className="text-[13px] text-muted-foreground mt-3 leading-relaxed max-w-sm">
+              Pełny dostęp do wszystkich 9 narzędzi. Pierwsze 14 dni bezpłatnie.
+            </p>
+            <button
+              type="button"
+              onClick={onPrimary}
+              className="mt-7 bg-warning text-warning-foreground font-semibold text-[14px] px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity"
+            >
+              Aktywuj pełny dostęp
+            </button>
+            <p className="text-[11.5px] text-muted-foreground mt-4 inline-flex items-center gap-1.5">
+              <Lock className="w-3 h-3" />
+              Bez zobowiązań. Anuluj w dowolnym momencie.
+            </p>
+          </div>
+        </section>
       </div>
 
+      <ScrollToTop />
 
       <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
     </SellerShell>
+  );
+}
+
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Wróć na górę"
+      className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-foreground text-background shadow-lg flex items-center justify-center hover:opacity-90 transition-opacity"
+    >
+      <ArrowUp className="w-5 h-5" strokeWidth={2} />
+    </button>
   );
 }
