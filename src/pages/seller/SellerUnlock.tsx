@@ -689,6 +689,186 @@ export default function SellerUnlock() {
                 </div>
               </div>
             </article>
+
+            {/* Tool 5 — Rotacja produktów */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 05
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Rotacja produktów fast / mid / slow
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Szeroki asortyment bez narzędzia do priorytetyzacji — nie wiadomo co przyspieszyć, a co wycofać.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Automatycznie klasyfikuje każdy produkt jako fast / mid / slow mover na podstawie tempa sprzedaży. Do każdego statusu przypisana kontekstowa akcja.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Jeden rzut oka zastępuje ręczny przegląd całego asortymentu.
+                  </p>
+                </div>
+              </div>
+
+              {/* Visualization */}
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+                    <span className="text-[14px] font-semibold">Rotacja produktów</span>
+                    <span className="text-[14px] text-muted-foreground">ostatnie 30 dni</span>
+                  </div>
+                  <ul className="divide-y divide-border">
+                    {[
+                      {
+                        name: "Bluza oversize — czarna",
+                        status: "FAST",
+                        Icon: Rabbit,
+                        days: "rotacja: 4 dni",
+                        cta: "Sprawdź stock",
+                        tone: "warning" as const,
+                      },
+                      {
+                        name: "T-shirt logo — biały",
+                        status: "MID",
+                        Icon: BarChart3,
+                        days: "rotacja: 14 dni",
+                        cta: "Monitoruj cenę",
+                        tone: "neutral" as const,
+                      },
+                      {
+                        name: "Spodnie cargo — khaki",
+                        status: "SLOW",
+                        Icon: Turtle,
+                        days: "rotacja: 62 dni",
+                        cta: "Oblicz nową cenę",
+                        tone: "muted" as const,
+                      },
+                    ].map((row) => (
+                      <li key={row.name} className="px-5 py-3.5 flex items-center gap-3">
+                        <span
+                          className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-[14px] font-semibold ${
+                            row.tone === "warning"
+                              ? "bg-warning/15 text-warning"
+                              : row.tone === "neutral"
+                              ? "bg-foreground/10 text-foreground"
+                              : "bg-muted text-muted-foreground"
+                          }`}
+                        >
+                          <row.Icon className="w-3.5 h-3.5" />
+                          {row.status}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[14px] font-medium truncate">{row.name}</p>
+                          <p className="text-[14px] text-muted-foreground">{row.days}</p>
+                        </div>
+                        <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3 py-1.5 rounded-full whitespace-nowrap">
+                          {row.cta}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            {/* Tool 6 — Score listingu */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 06
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Score listingu
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    „Nic nie zrobiłem, bo nie wiedziałem co w ogóle mogę zrobić." Kamil był na pozycji #247 w kategorii bez żadnej wskazówki dlaczego.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Dla każdego produktu oblicza score 0–100 w trzech wymiarach: opis, zdjęcia, cena. Wskazuje dokładnie co naprawić.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Konkretna lista do zrobienia zamiast zgadywania.
+                  </p>
+                </div>
+              </div>
+
+              {/* Visualization */}
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+                    <span className="text-[14px] font-semibold">Score listingu</span>
+                    <span className="text-[14px] text-muted-foreground">Bluza streetwear #SW-104</span>
+                  </div>
+
+                  <div className="p-5 flex flex-col gap-4">
+                    {[
+                      { label: "Opis", score: 30, note: "Brak rozmiarówki i materiału." },
+                      { label: "Zdjęcia", score: 20, note: "1 zdjęcie, brak UGC i detali." },
+                      { label: "Cena", score: 70, note: "Blisko mediany kategorii." },
+                    ].map((s) => {
+                      const low = s.score < 50;
+                      return (
+                        <div key={s.label}>
+                          <div className="flex items-baseline justify-between">
+                            <span className="text-[14px] font-semibold">{s.label}</span>
+                            <span className={`text-[14px] font-semibold ${low ? "text-warning" : "text-foreground"}`}>
+                              {s.score}<span className="text-muted-foreground font-normal">/100</span>
+                            </span>
+                          </div>
+                          <div className="mt-1.5 h-2 rounded-full bg-muted overflow-hidden">
+                            <div
+                              className={`h-full rounded-full ${low ? "bg-warning" : "bg-foreground/70"}`}
+                              style={{ width: `${s.score}%` }}
+                            />
+                          </div>
+                          <p className="text-[14px] text-muted-foreground mt-1.5 leading-snug">{s.note}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="px-5 pb-5">
+                    <span className="flex items-center justify-center gap-2 w-full bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full">
+                      <Wand2 className="w-4 h-4" />
+                      Popraw opis, zdjęcia i cenę
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
       </div>
