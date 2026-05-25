@@ -234,6 +234,222 @@ export default function SellerUnlock() {
             ))}
           </div>
         </section>
+
+        {/* Opis narzędzi */}
+        <section className="mt-16 md:mt-20">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+              Co dokładnie dostajesz w pakiecie
+            </h2>
+            <p className="text-[14px] text-muted-foreground mt-3">
+              Każde narzędzie rozwiązuje konkretny ból sprzedawcy — i pokazuje mierzalny efekt.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            {/* Tool 1 — Sygnały trendów */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 01
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Sygnały trendów
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Bartek tracił 7 godz./tydzień na ręczne śledzenie trendów na Instagramie, TikToku i u konkurencji.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Pokazuje, które produkty rosną na platformie, ile dni zostało do szczytu trendu i kiedy uzupełnić magazyn — na podstawie danych sprzedażowych i wyszukiwań FashionHero.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Oszczędność 7 godz./tydzień ręcznej pracy.
+                  </p>
+                </div>
+              </div>
+
+              {/* Visualization */}
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+                    <span className="text-[14px] font-semibold">Aktywne sygnały trendów</span>
+                    <span className="text-[14px] text-muted-foreground">tydzień 47</span>
+                  </div>
+                  <ul className="divide-y divide-border">
+                    {[
+                      {
+                        name: "Oversized blazer — beżowy",
+                        tone: "hot" as const,
+                        label: "HOT",
+                        Icon: Flame,
+                        peak: "szczyt za 6 dni",
+                        stock: "Stan: 12 szt.",
+                      },
+                      {
+                        name: "Mokasyny lakierowane",
+                        tone: "up" as const,
+                        label: "Rosnący",
+                        Icon: ArrowUpRight,
+                        peak: "szczyt za 18 dni",
+                        stock: "Stan: 47 szt.",
+                      },
+                      {
+                        name: "Trencz dwurzędowy",
+                        tone: "flat" as const,
+                        label: "Stabilny",
+                        Icon: Minus,
+                        peak: "bez zmian",
+                        stock: "Stan: 31 szt.",
+                      },
+                    ].map((row) => (
+                      <li key={row.name} className="px-5 py-3.5 flex items-center gap-4">
+                        <span
+                          className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-[14px] font-semibold ${
+                            row.tone === "hot"
+                              ? "bg-warning/15 text-warning"
+                              : row.tone === "up"
+                              ? "bg-foreground/10 text-foreground"
+                              : "bg-muted text-muted-foreground"
+                          }`}
+                        >
+                          <row.Icon className="w-3.5 h-3.5" />
+                          {row.label}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[14px] font-medium truncate">{row.name}</p>
+                          <p className="text-[14px] text-muted-foreground">{row.peak} · {row.stock}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="px-5 py-4 bg-warning/10 border-t border-warning/30 flex items-center gap-3">
+                    <span className="w-9 h-9 rounded-full bg-warning/20 flex items-center justify-center shrink-0">
+                      <Bell className="w-4 h-4 text-warning" />
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[14px] font-semibold leading-tight">
+                        Uzupełnij stock: Oversized blazer
+                      </p>
+                      <p className="text-[14px] text-muted-foreground mt-0.5">
+                        Prognoza: zabraknie za 4 dni — szczyt trendu już za 6.
+                      </p>
+                    </div>
+                    <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3.5 py-2 rounded-full whitespace-nowrap">
+                      Zamów +40 szt.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Tool 2 — Benchmark cen */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 02
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Benchmark cen i kalkulator break-even
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Dorota spędzała 5 godz./tydzień w Excelu śledząc ceny i nie widziała, co zmiana ceny robi z marżą po prowizji.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Automatycznie porównuje cenę sprzedawcy z medianą kategorii. Kalkulator pokazuje wpływ zmiany ceny na marżę netto (z uwzględnieniem prowizji platformy) i próg break-even wolumenowy.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Oszczędność 5 godz./tydzień + decyzje cenowe oparte na danych, nie intuicji.
+                  </p>
+                </div>
+              </div>
+
+              {/* Visualization */}
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border flex items-center gap-2">
+                    <Calculator className="w-4 h-4 text-warning" />
+                    <span className="text-[14px] font-semibold">Kalkulator break-even</span>
+                    <span className="ml-auto text-[14px] text-muted-foreground">Mokasyny lakierowane</span>
+                  </div>
+
+                  <div className="p-5 grid grid-cols-3 gap-3">
+                    {[
+                      { label: "Aktualna cena", value: "289 zł" },
+                      { label: "Nowa cena", value: "259 zł", accent: true },
+                      { label: "Prowizja", value: "18%" },
+                    ].map((f) => (
+                      <div
+                        key={f.label}
+                        className={`rounded-lg border px-3 py-2.5 ${
+                          f.accent ? "border-warning/40 bg-warning/5" : "border-border bg-background"
+                        }`}
+                      >
+                        <p className="text-[14px] text-muted-foreground">{f.label}</p>
+                        <p className="text-[16px] font-semibold mt-0.5">{f.value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="px-5 pb-4 grid grid-cols-2 gap-3">
+                    <div className="rounded-lg bg-background border border-border px-4 py-3">
+                      <p className="text-[14px] text-muted-foreground">Różnica netto / szt.</p>
+                      <p className="text-[20px] font-serif text-destructive mt-1">−24,60 zł</p>
+                    </div>
+                    <div className="rounded-lg bg-background border border-border px-4 py-3">
+                      <p className="text-[14px] text-muted-foreground">Wolumen do break-even</p>
+                      <p className="text-[20px] font-serif mt-1">+38%</p>
+                    </div>
+                  </div>
+
+                  <div className="px-5 py-3 bg-muted/40 border-y border-border flex items-start gap-2.5">
+                    <AlertTriangle className="w-4 h-4 text-warning shrink-0 mt-0.5" />
+                    <p className="text-[14px] leading-snug">
+                      Twoja cena jest <span className="font-semibold">−7% poniżej mediany</span> kategorii (mediana: 312 zł). Rekomendacja: podnieś do <span className="font-semibold">305 zł</span> — marża +11 zł/szt. bez utraty pozycji.
+                    </p>
+                  </div>
+
+                  <div className="px-5 py-4">
+                    <span className="block w-full text-center bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full">
+                      Aktualizuj cenę → 305 zł
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
 
 
