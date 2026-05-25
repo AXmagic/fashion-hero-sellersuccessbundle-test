@@ -14,6 +14,7 @@ interface Feature {
   key: string;
   title: string;
   teaser: string;
+  impact: string;
   Icon: React.ComponentType<{ className?: string }>;
   preview: React.ReactNode;
 }
@@ -75,7 +76,8 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
     {
       key: "price_monitor",
       title: "Price Monitor",
-      teaser: "Poświęcasz 20 godzin miesięcznie na śledzenie cen w Excelu? Price Monitor zrobi to za Ciebie. Sprawdź ile produktów konkurencji potaniało w tym tygodniu w Twojej kategorii.",
+      teaser: "Poświęcasz 20 godzin miesięcznie na śledzenie cen w Excelu? Price Monitor zrobi to za Ciebie.",
+      impact: "Sprzedawcy korzystający z Price Monitor odzyskują średnio 3–5pp marży w 60 dni dzięki szybszym reakcjom na zmiany cen konkurencji.",
       Icon: LineChart,
       preview: (
         <table className="w-full text-[11px]">
@@ -94,7 +96,8 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
     {
       key: "trend_feed",
       title: "Trend Feed",
-      teaser: "Sprawdź, które produkty w Twojej kategorii zyskują teraz na popularności — zanim zdecydujesz co promować albo co zamawiać. Zobacz, o co kupujący pytali w Twojej kategorii przez ostatnie 14 dni.",
+      teaser: "Sprawdź, które produkty w Twojej kategorii zyskują teraz na popularności — zanim zdecydujesz co promować albo co zamawiać.",
+      impact: "Sprzedawcy używający Trend Feed trafiają z asortymentem 2× częściej i ograniczają niesprzedaną resztę kolekcji o ok. 20%.",
       Icon: TrendingUp,
       preview: (
         <div className="h-full w-full">
@@ -106,6 +109,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
       key: "returns_analyzer",
       title: "Returns Analyzer",
       teaser: "Zarabiasz na produktach i oddajesz prawie to samo w zwrotach? Sprawdź Top 3 powody zwrotów w Twojej kategorii — i jak je ograniczyć.",
+      impact: "Sklepy, które wdrożyły rekomendacje Returns Analyzer, obniżają koszt zwrotów średnio o 25–35% w pierwszym kwartale.",
       Icon: PackageX,
       preview: (
         <ul className="text-[11px] space-y-1.5">
@@ -154,6 +158,11 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
             </div>
             <p className="text-[13px] text-muted-foreground leading-relaxed">{f.teaser}</p>
 
+            <div className="rounded-md bg-warning/10 border border-warning/25 px-3 py-2 text-[12px] leading-relaxed text-foreground">
+              <span className="font-semibold text-warning">Wpływ:</span>{" "}
+              <span className="text-muted-foreground">{f.impact}</span>
+            </div>
+
             {/* Blurred preview */}
             <div className="relative mt-2 h-[120px] bg-cream overflow-hidden">
               <div
@@ -165,7 +174,7 @@ export default function Layer2Preview({ profile, price, onUnlock }: Props) {
               </div>
               <div className="absolute inset-0 bg-background/30 flex items-center justify-center">
                 <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold bg-warning text-warning-foreground px-4 py-1.5 rounded-full">
-                  <Lock className="w-3 h-3" /> Odblokuj dane
+                  <Lock className="w-3 h-3" /> Dowiedz się więcej
                 </span>
               </div>
             </div>
