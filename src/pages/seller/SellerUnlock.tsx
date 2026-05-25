@@ -191,14 +191,14 @@ export default function SellerUnlock() {
                 key={p.name}
                 className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
               >
-                <div className="p-6 flex items-center gap-3 border-b border-border">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-muted shrink-0 opacity-80">
+                <div className="px-6 pt-6 pb-5 flex items-center gap-3.5 border-b border-border">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-muted shrink-0">
                     <img
                       src={p.photo}
                       alt={`${p.name} — ${p.meta}`}
                       loading="lazy"
-                      width={96}
-                      height={96}
+                      width={128}
+                      height={128}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -206,27 +206,30 @@ export default function SellerUnlock() {
                     <h3 className="text-[14px] font-medium text-muted-foreground leading-tight">
                       {p.name}
                     </h3>
-                    <p className="text-[11.5px] text-muted-foreground/80 mt-0.5 truncate">
+                    <p className="text-[14px] text-muted-foreground/80 mt-1 leading-snug">
                       {p.meta}
                     </p>
                   </div>
                 </div>
-                <div className="p-6 flex flex-col gap-4 flex-1">
+                <div className="p-6 flex flex-col gap-5 flex-1">
                   <div>
-                    <span className="text-[10.5px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
                       Ból
                     </span>
-                    <p className="text-[15px] mt-1.5 leading-relaxed font-medium">{p.pain}</p>
+                    <p className="text-[15px] mt-2 leading-relaxed">{p.pain}</p>
                   </div>
 
-                  <div className="mt-auto pt-4 border-t border-border">
-                    <span className="text-[10.5px] font-semibold uppercase tracking-[1.4px] text-warning">
+                  <div className="mt-auto rounded-xl bg-warning/10 border border-warning/30 p-4">
+                    <span className="inline-flex items-center gap-1.5 text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                       Z pakietem
                     </span>
-                    <p className="text-[15px] mt-1.5 leading-relaxed font-medium">{p.gain}</p>
+                    <p className="text-[15px] mt-2 leading-relaxed font-medium text-foreground">
+                      {p.gain}
+                    </p>
                   </div>
                 </div>
               </article>
+
 
             ))}
           </div>
