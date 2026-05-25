@@ -169,8 +169,18 @@ export default function SellerUnlock() {
             </div>
           </div>
 
-          <p className="text-[12px] text-muted-foreground mt-6 text-center">
-            Cena obejmuje wszystkie 9 narzędzi. Bez ukrytych opłat. Rezygnacja w dowolnym momencie.
+          <p className="text-[12px] text-muted-foreground mt-6 text-center max-w-2xl mx-auto leading-relaxed">
+            <span className="font-semibold text-foreground">Pierwsze 14 dni bezpłatnie.</span>{" "}
+            Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Rezygnacja możliwa w dowolnym momencie. Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
+            <br />
+            Masz pytania?{" "}
+            <a
+              href="mailto:sellers@fashionhero.pl"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Napisz do nas
+            </a>{" "}
+            — odpowiadamy w 24h.
           </p>
         </div>
 
