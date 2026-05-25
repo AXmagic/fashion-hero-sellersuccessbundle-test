@@ -49,8 +49,10 @@ export function logEvent(ev: Omit<WtpEvent, "ts">) {
   } catch {
     /* ignore */
   }
-  // eslint-disable-next-line no-console
-  console.info("[wtp]", full);
+  if (import.meta.env.DEV) {
+    // eslint-disable-next-line no-console
+    console.info("[wtp]", full);
+  }
 }
 
 export function readEvents(): WtpEvent[] {
