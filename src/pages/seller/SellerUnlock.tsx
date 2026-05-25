@@ -1280,7 +1280,7 @@ export default function SellerUnlock() {
         onClose={onFollowupClose}
         onSubmit={onFollowupSubmit}
       />
-      <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
+      <WaitlistDialog open={open} onOpenChange={onWaitlistOpenChange} profile={profile.id} price={price} />
 
     </SellerShell>
   );
