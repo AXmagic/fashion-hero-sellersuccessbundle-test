@@ -75,7 +75,7 @@ export default function MetricCard({
         to={`/seller/${profile ?? "dorota"}/unlock`}
         className="mt-auto inline-flex items-center justify-center gap-1.5 text-[12px] font-medium text-foreground border border-border rounded-full px-4 py-2 hover:bg-muted transition-colors"
       >
-        Zobacz szczegóły
+        Dowiedz się więcej
         <ArrowRight className="w-3.5 h-3.5" />
       </Link>
     </div>
