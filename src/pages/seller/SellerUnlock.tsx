@@ -178,10 +178,10 @@ export default function SellerUnlock() {
         <section className="mt-16 md:mt-20">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-              Dla kogo jest Seller Success Bundle
+              Jeden pakiet. Różne problemy. Ten sam efekt: lepsza sprzedaż.
             </h2>
             <p className="text-[14px] text-muted-foreground mt-3">
-              Trzy realne sytuacje sprzedawców FashionHero — i to, co pakiet zmienia w ich codziennej pracy.
+              Niezależnie od tego, czy dopiero startujesz, czy sprzedajesz premium za dziesiątki tysięcy miesięcznie — Seller Success Bundle pomaga uporządkować i przyspieszyć rozwój.
             </p>
           </div>
 
