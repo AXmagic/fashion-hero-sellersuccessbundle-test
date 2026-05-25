@@ -123,6 +123,19 @@ export default function SellerUnlock() {
                   </div>
                 ))}
               </div>
+
+              <p className="text-[12px] text-muted-foreground mt-8 leading-relaxed max-w-md">
+                Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
+                <br />
+                Masz pytania?{" "}
+                <a
+                  href="mailto:sellers@fashionhero.pl"
+                  className="underline underline-offset-2 hover:text-foreground"
+                >
+                  Napisz do nas
+                </a>{" "}
+                — odpowiadamy w 24h.
+              </p>
             </div>
 
             {/* RIGHT: pricing card */}
@@ -171,19 +184,6 @@ export default function SellerUnlock() {
               </div>
             </div>
           </div>
-
-          <p className="text-[12px] text-muted-foreground mt-6 text-center max-w-2xl mx-auto leading-relaxed">
-            Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
-            <br />
-            Masz pytania?{" "}
-            <a
-              href="mailto:sellers@fashionhero.pl"
-              className="underline underline-offset-2 hover:text-foreground"
-            >
-              Napisz do nas
-            </a>{" "}
-            — odpowiadamy w 24h.
-          </p>
         </div>
 
         {/* Dla kogo */}
