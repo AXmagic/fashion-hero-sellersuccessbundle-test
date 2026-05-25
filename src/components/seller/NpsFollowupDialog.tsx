@@ -49,10 +49,18 @@ export default function NpsFollowupDialog({ open, onClose, onSubmit }: Props) {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="font-serif text-2xl leading-tight">
-            Co w Twoim sklepie chcesz naprawić w pierwszej kolejności?
+            Chcemy lepiej zrozumieć potrzeby Twojego sklepu
           </DialogTitle>
-          <DialogDescription>
-            Jedno zdanie wystarczy. Pomoże nam zrozumieć, czego brakuje.
+          <DialogDescription className="space-y-3">
+            <span className="block">
+              Dziękujemy, że aktywujesz pakiet. Twoja wcześniejsza odpowiedź pomaga nam rozwijać platformę w lepszym kierunku.
+            </span>
+            <span className="block font-medium text-foreground">
+              Co chciał(a)byś poprawić w swoim sklepie w pierwszej kolejności?
+            </span>
+            <span className="block">
+              Może to być problem związany ze sprzedażą, czasem, promocją lub organizacją pracy. Jedno zdanie wystarczy.
+            </span>
           </DialogDescription>
         </DialogHeader>
         <Textarea
