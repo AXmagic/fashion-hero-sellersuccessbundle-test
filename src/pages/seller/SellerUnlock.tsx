@@ -279,7 +279,7 @@ export default function SellerUnlock() {
 
         {/* Opis narzędzi */}
         <section className="mt-16 md:mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
             <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.6px] text-muted-foreground">
               <span className="w-6 h-px bg-border" />
               Co dostajesz
