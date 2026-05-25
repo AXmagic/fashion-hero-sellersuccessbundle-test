@@ -9,6 +9,7 @@ import { logEvent } from "@/lib/wtpLog";
 import personaBartek from "@/assets/persona-bartek.jpg";
 import personaDorota from "@/assets/persona-dorota.jpg";
 import personaKamil from "@/assets/persona-kamil.jpg";
+import sellerSuccessCta from "@/assets/seller-success-cta.jpg";
 
 const PERSONAS = [
   {
