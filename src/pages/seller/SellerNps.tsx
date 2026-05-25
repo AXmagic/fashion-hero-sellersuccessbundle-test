@@ -55,8 +55,9 @@ export default function SellerNps() {
       <main className="flex-1 flex items-center justify-center px-5 md:px-10 py-10">
         <div className="max-w-2xl w-full text-center">
           <h1 className="font-serif text-3xl md:text-[40px] leading-[1.15]">
-            Jak bardzo polecałbyś FashionHero innemu sprzedawcy?
+            Jak bardzo polecałbyś/polecałabyś FashionHero innemu sprzedawcy?
           </h1>
+
 
           <div className="mt-10">
             <div className="flex flex-wrap justify-center gap-2 md:gap-2.5">
