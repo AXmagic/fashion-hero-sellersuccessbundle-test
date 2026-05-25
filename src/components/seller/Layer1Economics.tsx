@@ -75,11 +75,16 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
         </span>
       </button>
 
+
+      <p className="text-[11.5px] text-muted-foreground -mt-2 px-1">
+        Trend wyliczony z {profile.txCount} transakcji w ostatnich {profile.dataWindowDays} dniach ({profile.dataWindowLabel}).
+      </p>
+
       {/* Period selector row */}
       <div className="flex justify-end">
         <div className="inline-flex items-center gap-2 text-[12px] bg-card border border-border px-3 py-1.5 rounded-md">
           <Calendar className="w-3.5 h-3.5 text-muted-foreground" />
-          <span className="text-foreground">Ostatnie 30 dni</span>
+          <span className="text-foreground">Ostatnie {profile.dataWindowDays} dni</span>
           <ChevronRight className="w-3.5 h-3.5 rotate-90 text-muted-foreground" />
         </div>
       </div>
@@ -94,6 +99,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           deltaSuffix="%"
           tone="success"
           spark={revenueSpark}
+          source={`Na podstawie ${profile.txCount} transakcji zarejestrowanych między ${profile.dataWindowLabel}.`}
         />
         <MetricCard
           label="Marża netto"
@@ -101,6 +107,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           hint={`${profile.marginDeltaPp >= 0 ? "+" : ""}${profile.marginDeltaPp}pp vs. poprzednie 30 dni`}
           tone={profile.marginDeltaPp < 0 ? "destructive" : "success"}
           spark={profile.marginWeekly}
+          source={`Szacowane z ${profile.txCount} transakcji (${profile.dataWindowDays} dni). Uwzględnia prowizje FashionHero, koszty wysyłki i zwroty.`}
         />
         <MetricCard
           label="Koszt zwrotów"
@@ -108,6 +115,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           hint={`${profile.returnRatePct}% zwrotów od sprzedaży brutto`}
           tone={profile.returnRatePct >= 30 ? "destructive" : "warning"}
           spark={returnsSpark}
+          source={`Na podstawie ${profile.returnsCount} zwrotów zarejestrowanych w systemie między ${profile.dataWindowLabel}.`}
         />
         <MetricCard
           label="Pozycja w kategorii"
@@ -115,6 +123,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           hint={profile.positionLabel}
           tone={profile.positionTone === "muted" ? "warning" : profile.positionTone}
           spark={positionSpark}
+          source={`Porównanie ${profile.categoryPeerCount} aktywnych sklepów w kategorii „${profile.category}" w ostatnich ${profile.dataWindowDays} dniach.`}
         />
       </div>
 
@@ -130,6 +139,9 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           </div>
         </div>
         <MarginSparkline data={profile.marginWeekly} />
+        <p className="text-[11.5px] text-muted-foreground mt-3">
+          Szacujemy na podstawie {profile.txCount} transakcji z ostatnich {profile.dataWindowDays} dni ({profile.dataWindowLabel}).
+        </p>
       </div>
     </section>
   );

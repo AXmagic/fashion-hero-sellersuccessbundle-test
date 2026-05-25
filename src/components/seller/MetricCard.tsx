@@ -1,6 +1,7 @@
-import { ArrowDownRight, ArrowUpRight, HelpCircle, ArrowRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Info, ArrowRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import LineSpark from "./LineSpark";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 interface Props {
   label: string;
@@ -10,6 +11,7 @@ interface Props {
   deltaSuffix?: string;
   tone?: "default" | "warning" | "destructive" | "success";
   spark?: number[];
+  source?: string;
 }
 
 export default function MetricCard({
@@ -20,6 +22,7 @@ export default function MetricCard({
   deltaSuffix = "pp",
   tone = "default",
   spark,
+  source,
 }: Props) {
   const { profile } = useParams();
   const isDown = typeof delta === "number" && delta < 0;
@@ -31,7 +34,25 @@ export default function MetricCard({
     <div className="bg-card border border-border rounded-md p-4 md:p-5 flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <span className="text-[12px] text-muted-foreground">{label}</span>
-        <HelpCircle className="w-3.5 h-3.5 text-muted-foreground/60" />
+        {source ? (
+          <Popover>
+            <PopoverTrigger asChild>
+              <button
+                type="button"
+                aria-label="Skąd pochodzą te dane"
+                className="text-muted-foreground/60 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-full"
+              >
+                <Info className="w-3.5 h-3.5" />
+              </button>
+            </PopoverTrigger>
+            <PopoverContent side="top" align="end" className="w-64 text-[12px] leading-relaxed">
+              <div className="font-semibold text-foreground mb-1">Skąd ta liczba?</div>
+              <div className="text-muted-foreground">{source}</div>
+            </PopoverContent>
+          </Popover>
+        ) : (
+          <Info className="w-3.5 h-3.5 text-muted-foreground/60" />
+        )}
       </div>
 
       <div className="text-2xl md:text-[28px] font-semibold tracking-tight text-foreground leading-tight">

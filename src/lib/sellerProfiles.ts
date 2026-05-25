@@ -18,6 +18,12 @@ export interface SellerProfile {
   hookSub: string;
   // Sparkline data: last 8 weeks margin %
   marginWeekly: number[];
+  // Data provenance
+  dataWindowDays: number;
+  dataWindowLabel: string; // e.g. "1.02 – 30.04.2026"
+  txCount: number;
+  returnsCount: number;
+  categoryPeerCount: number;
 }
 
 export const PROFILES: Record<ProfileId, SellerProfile> = {
@@ -37,6 +43,11 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     hookHeadline: "W tym miesiącu Twoja marża na butach spadła o 5 punktów.\nJeśli trend się utrzyma, stracisz ok. 700 PLN netto w kolejnych 30 dniach",
     hookSub: "Pełna analiza pokaże, które modele butów, koszty lub rabaty odpowiadają za spadek marży",
     marginWeekly: [29, 28, 27, 28, 26, 25, 24, 23],
+    dataWindowDays: 30,
+    dataWindowLabel: "1.04 – 30.04.2026",
+    txCount: 184,
+    returnsCount: 33,
+    categoryPeerCount: 412,
   },
   bartek: {
     id: "bartek",
@@ -54,6 +65,11 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     hookHeadline: "Zwroty kosztowały Cię w tym miesiącu 3 400 PLN",
     hookSub: "Zarabiasz na sukienkach, a oddajesz to samo na zwrotach. Sprawdź dlaczego.",
     marginWeekly: [33, 34, 32, 33, 31, 32, 30, 31],
+    dataWindowDays: 60,
+    dataWindowLabel: "1.03 – 30.04.2026",
+    txCount: 612,
+    returnsCount: 269,
+    categoryPeerCount: 1840,
   },
   kamil: {
     id: "kamil",
@@ -71,6 +87,11 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     hookHeadline: "Twoje koszulki i bluzy są niewidoczne dla 9 na 10 kupujących.",
     hookSub: "Zanim wydasz pierwsze złote na promowane oferty — dowiedz się, które z 20 produktów w ogóle mają szansę się przebić.",
     marginWeekly: [36, 37, 36, 38, 37, 38, 37, 38],
+    dataWindowDays: 90,
+    dataWindowLabel: "1.02 – 30.04.2026",
+    txCount: 142,
+    returnsCount: 13,
+    categoryPeerCount: 736,
   },
 };
 
