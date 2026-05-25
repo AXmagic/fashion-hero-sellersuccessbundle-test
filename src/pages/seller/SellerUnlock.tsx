@@ -1000,7 +1000,7 @@ export default function SellerUnlock() {
                           </div>
                           <div className="px-3 py-2.5">
                             <p className="text-[14px] font-medium truncate">{p.name}</p>
-                            <div className="flex gap-2 mt-2">
+                            <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-2 mt-2">
                               <span className="flex-1 inline-flex items-center justify-center gap-1 text-[11px] sm:text-[13px] font-semibold bg-foreground text-background px-2 py-1.5 rounded-full">
                                 <Check className="w-3.5 h-3.5" /> Zatwierdź
                               </span>
