@@ -3,13 +3,16 @@ import { Navigate, useParams, useSearchParams, Link } from "react-router-dom";
 import { ChevronLeft, BarChart3, ShieldCheck, TrendingUp, Check, Lock, Sparkles, Flame, ArrowUpRight, Minus, Bell, Calculator, AlertTriangle, Zap, RotateCw, PackageX, Camera, Ruler, MessageSquare, ArrowRight, Rabbit, Turtle, Wand2, X, FileText, ListChecks, Image as ImageIcon, Tag, PenLine, ArrowUp } from "lucide-react";
 import SellerShell from "@/components/seller/SellerShell";
 import WaitlistDialog from "@/components/seller/WaitlistDialog";
+import NpsFollowupDialog from "@/components/seller/NpsFollowupDialog";
 import { getProfile } from "@/lib/sellerProfiles";
 import { getSessionPrice } from "@/lib/wtpPrice";
 import { logEvent } from "@/lib/wtpLog";
+import { isCritic } from "@/lib/npsStore";
 import personaBartek from "@/assets/persona-bartek.jpg";
 import personaDorota from "@/assets/persona-dorota.jpg";
 import personaKamil from "@/assets/persona-kamil.jpg";
 import sellerSuccessCta from "@/assets/seller-success-cta.jpg";
+
 
 const PERSONAS = [
   {
@@ -63,6 +66,7 @@ export default function SellerUnlock() {
   const featureKey = params.get("feature") ?? "full_access";
   const profile = getProfile(profileId);
   const [open, setOpen] = useState(false);
+  const [followupOpen, setFollowupOpen] = useState(false);
   const seen = useRef(false);
 
   useEffect(() => {
@@ -80,6 +84,21 @@ export default function SellerUnlock() {
 
   const onPrimary = () => {
     logEvent({ type: "cta_click", profile: profile.id, price, feature: "primary_cta" });
+    if (isCritic(profile.id)) {
+      setFollowupOpen(true);
+    } else {
+      setOpen(true);
+    }
+  };
+
+  const onFollowupSubmit = (text: string) => {
+    logEvent({ type: "nps_followup_submit", profile: profile.id, price, nps_followup: text });
+    setFollowupOpen(false);
+    setOpen(true);
+  };
+
+  const onFollowupClose = () => {
+    setFollowupOpen(false);
     setOpen(true);
   };
 
@@ -88,11 +107,12 @@ export default function SellerUnlock() {
       <div className="max-w-[1200px] pt-6 md:pt-8">
         {/* Back link — always at the very top */}
         <Link
-          to={`/seller/${profile.id}`}
+          to={`/seller/${profile.id}/flow`}
           className="inline-flex items-center gap-1 text-[12px] text-muted-foreground hover:text-foreground mb-6"
         >
           <ChevronLeft className="w-3.5 h-3.5" /> Wróć do panelu
         </Link>
+
 
         <div className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 px-6 md:px-10 py-8 md:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
@@ -1253,7 +1273,13 @@ export default function SellerUnlock() {
 
       <ScrollToTop />
 
+      <NpsFollowupDialog
+        open={followupOpen}
+        onClose={onFollowupClose}
+        onSubmit={onFollowupSubmit}
+      />
       <WaitlistDialog open={open} onOpenChange={setOpen} profile={profile.id} price={price} />
+
     </SellerShell>
   );
 }

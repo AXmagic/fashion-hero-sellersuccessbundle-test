@@ -4,6 +4,8 @@ import { posthog } from "./posthog";
 
 export type WtpEventType =
   | "session_start"
+  | "nps_submit"
+  | "nps_followup_submit"
   | "w1_view"
   | "w2_view"
   | "preview_click"
@@ -19,7 +21,10 @@ export interface WtpEvent {
   price: PricePoint;
   feature?: string;
   email?: string;
+  nps?: number;
+  nps_followup?: string;
 }
+
 
 const KEY = "wtp_events";
 
@@ -44,7 +49,10 @@ export function logEvent(ev: Omit<WtpEvent, "ts">) {
         price: full.price,
         feature: full.feature,
         email: full.email,
+        nps: full.nps,
+        nps_followup: full.nps_followup,
       });
+
     }
   } catch {
     /* ignore */
