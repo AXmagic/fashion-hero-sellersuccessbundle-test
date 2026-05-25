@@ -144,6 +144,11 @@ export default function SellerUnlock() {
                   analitycznych FashionHero
                 </p>
 
+                <div className="mt-5 rounded-xl bg-warning/10 border border-warning/30 px-4 py-3 text-[12.5px] leading-relaxed text-foreground/80 text-left">
+                  <span className="font-semibold text-foreground">Pierwsze 14 dni bezpłatnie.</span>{" "}
+                  Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Rezygnacja możliwa w dowolnym momencie.
+                </div>
+
                 <ul className="text-left mt-6 space-y-2.5">
                   {INCLUDED.map((item) => (
                     <li key={item} className="flex gap-2.5 text-[13.5px]">
@@ -170,8 +175,7 @@ export default function SellerUnlock() {
           </div>
 
           <p className="text-[12px] text-muted-foreground mt-6 text-center max-w-2xl mx-auto leading-relaxed">
-            <span className="font-semibold text-foreground">Pierwsze 14 dni bezpłatnie.</span>{" "}
-            Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Rezygnacja możliwa w dowolnym momencie. Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
+            Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
             <br />
             Masz pytania?{" "}
             <a
