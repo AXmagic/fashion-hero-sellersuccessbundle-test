@@ -1162,31 +1162,61 @@ export default function SellerUnlock() {
           </div>
         </section>
 
-        {/* Final pricing + CTA — minimal */}
+        {/* Final pricing + CTA — full width, mirrors hero */}
         <section className="mt-16 md:mt-20 mb-8">
-          <div className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] px-8 md:px-12 py-10 md:py-12 flex flex-col items-center text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-muted-foreground">
-              Seller Success Bundle
-            </span>
-            <div className="flex items-baseline gap-1.5 mt-4">
-              <span className="font-serif text-[56px] leading-none">{price}</span>
-              <span className="text-[15px] font-semibold">PLN</span>
-              <span className="text-[14px] text-muted-foreground">/ miesiąc</span>
+          <div className="rounded-2xl bg-gradient-to-br from-cream via-cream to-warning/15 px-6 md:px-10 py-8 md:py-12 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+              {/* LEFT: image */}
+              <div className="order-2 lg:order-1">
+                <div className="rounded-2xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)]">
+                  <img
+                    src={sellerSuccessCta}
+                    alt="Sprzedawczyni FashionHero analizująca wyniki sprzedaży na laptopie"
+                    loading="lazy"
+                    width={1280}
+                    height={960}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* RIGHT: pricing + CTA */}
+              <div className="order-1 lg:order-2">
+                <span className="inline-flex items-center text-[11px] font-semibold uppercase tracking-[1.6px] bg-warning/15 text-warning px-3 py-1.5 rounded-md">
+                  Gotowy/a zacząć?
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl leading-[1.15] mt-5">
+                  Aktywuj pełny dostęp
+                  <br />
+                  <span className="text-warning">i wyprzedź konkurencję.</span>
+                </h2>
+                <p className="text-[14px] md:text-[15px] text-muted-foreground mt-5 leading-relaxed max-w-md">
+                  Wszystkie 9 narzędzi w jednym pakiecie. Dane z FashionHero — Twojego sklepu i Twojej kategorii.
+                </p>
+
+                <div className="bg-card rounded-2xl shadow-[0_10px_40px_-12px_rgba(0,0,0,0.15)] mt-7 px-6 md:px-7 py-6 max-w-md">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="font-serif text-[48px] leading-none">{price}</span>
+                    <span className="text-[15px] font-semibold">PLN</span>
+                    <span className="text-[14px] text-muted-foreground">/ miesiąc</span>
+                  </div>
+                  <p className="text-[13px] text-muted-foreground mt-2 leading-relaxed">
+                    Pełny dostęp do wszystkich narzędzi analitycznych FashionHero. Pierwsze 14 dni bezpłatnie.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={onPrimary}
+                    className="mt-5 w-full bg-warning text-warning-foreground font-semibold text-[14px] py-3.5 rounded-full hover:opacity-90 transition-opacity"
+                  >
+                    Aktywuj pełny dostęp
+                  </button>
+                  <p className="text-[11.5px] text-muted-foreground mt-4 leading-relaxed text-center inline-flex items-start gap-1.5 justify-center">
+                    <Lock className="w-3 h-3 mt-0.5 shrink-0" />
+                    <span>Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Bez zobowiązań — anuluj w dowolnym momencie.</span>
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="text-[13px] text-muted-foreground mt-3 leading-relaxed max-w-sm">
-              Pełny dostęp do wszystkich 9 narzędzi. Pierwsze 14 dni bezpłatnie.
-            </p>
-            <button
-              type="button"
-              onClick={onPrimary}
-              className="mt-7 bg-warning text-warning-foreground font-semibold text-[14px] px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity"
-            >
-              Aktywuj pełny dostęp
-            </button>
-            <p className="text-[11.5px] text-muted-foreground mt-4 inline-flex items-center gap-1.5">
-              <Lock className="w-3 h-3" />
-              Bez zobowiązań. Anuluj w dowolnym momencie.
-            </p>
           </div>
         </section>
       </div>
