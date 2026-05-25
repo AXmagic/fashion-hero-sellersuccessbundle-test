@@ -99,6 +99,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           deltaSuffix="%"
           tone="success"
           spark={revenueSpark}
+          source={`Na podstawie ${profile.txCount} transakcji zarejestrowanych między ${profile.dataWindowLabel}.`}
         />
         <MetricCard
           label="Marża netto"
@@ -106,6 +107,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           hint={`${profile.marginDeltaPp >= 0 ? "+" : ""}${profile.marginDeltaPp}pp vs. poprzednie 30 dni`}
           tone={profile.marginDeltaPp < 0 ? "destructive" : "success"}
           spark={profile.marginWeekly}
+          source={`Szacowane z ${profile.txCount} transakcji (${profile.dataWindowDays} dni). Uwzględnia prowizje FashionHero, koszty wysyłki i zwroty.`}
         />
         <MetricCard
           label="Koszt zwrotów"
@@ -113,6 +115,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           hint={`${profile.returnRatePct}% zwrotów od sprzedaży brutto`}
           tone={profile.returnRatePct >= 30 ? "destructive" : "warning"}
           spark={returnsSpark}
+          source={`Na podstawie ${profile.returnsCount} zwrotów zarejestrowanych w systemie między ${profile.dataWindowLabel}.`}
         />
         <MetricCard
           label="Pozycja w kategorii"
@@ -120,6 +123,7 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           hint={profile.positionLabel}
           tone={profile.positionTone === "muted" ? "warning" : profile.positionTone}
           spark={positionSpark}
+          source={`Porównanie ${profile.categoryPeerCount} aktywnych sklepów w kategorii „${profile.category}" w ostatnich ${profile.dataWindowDays} dniach.`}
         />
       </div>
 
@@ -135,6 +139,9 @@ export default function Layer1Economics({ profile, price, onUnlock }: Props) {
           </div>
         </div>
         <MarginSparkline data={profile.marginWeekly} />
+        <p className="text-[11.5px] text-muted-foreground mt-3">
+          Szacujemy na podstawie {profile.txCount} transakcji z ostatnich {profile.dataWindowDays} dni ({profile.dataWindowLabel}).
+        </p>
       </div>
     </section>
   );
