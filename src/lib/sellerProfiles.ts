@@ -43,6 +43,11 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     hookHeadline: "W tym miesiącu Twoja marża na butach spadła o 5 punktów.\nJeśli trend się utrzyma, stracisz ok. 700 PLN netto w kolejnych 30 dniach",
     hookSub: "Pełna analiza pokaże, które modele butów, koszty lub rabaty odpowiadają za spadek marży",
     marginWeekly: [29, 28, 27, 28, 26, 25, 24, 23],
+    dataWindowDays: 30,
+    dataWindowLabel: "1.04 – 30.04.2026",
+    txCount: 184,
+    returnsCount: 33,
+    categoryPeerCount: 412,
   },
   bartek: {
     id: "bartek",
