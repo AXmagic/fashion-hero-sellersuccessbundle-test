@@ -869,6 +869,275 @@ export default function SellerUnlock() {
                 </div>
               </div>
             </article>
+
+            {/* Tool 7 — UGC */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 07
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Zdjęcia klientek (UGC)
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    52% zwrotów Bartka wynikało z rozbieżności między zdjęciem studyjnym a wyglądem produktu w rzeczywistości.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Automatyczna prośba o zdjęcie po zakupie (e-mail po 10 dniach od dostawy) z voucherem 5% dla kupującej. Sprzedawca zatwierdza każde zdjęcie przed publikacją.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Return rate −13 pp przy aktywnym UGC (Bartek), −3 pp (Dorota).
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  <div className="p-5 border-b border-border">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[14px] font-semibold">Automatyzacja UGC</span>
+                      <span className="inline-flex items-center gap-2 text-[14px]">
+                        <span className="relative inline-block w-9 h-5 rounded-full bg-warning">
+                          <span className="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-card" />
+                        </span>
+                        <span className="text-warning font-semibold">ON</span>
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2.5">
+                      {[
+                        { label: "Wysyłka po", value: "10 dniach" },
+                        { label: "Voucher", value: "5%" },
+                        { label: "Zatwierdzenie", value: "Ręczne" },
+                      ].map((f) => (
+                        <div key={f.label} className="rounded-lg border border-border bg-background px-3 py-2">
+                          <p className="text-[14px] text-muted-foreground">{f.label}</p>
+                          <p className="text-[14px] font-semibold mt-0.5">{f.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[14px] font-semibold">Kolejka zatwierdzeń</span>
+                      <span className="text-[14px] text-muted-foreground">2 oczekujące</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { name: "Sukienka midi · @ania.k", color: "from-warning/40 to-warning/10" },
+                        { name: "Bluza oversize · @magda_w", color: "from-foreground/30 to-foreground/5" },
+                      ].map((p) => (
+                        <div key={p.name} className="rounded-lg border border-border bg-background overflow-hidden">
+                          <div className={`aspect-[4/5] bg-gradient-to-br ${p.color} flex items-center justify-center`}>
+                            <Camera className="w-8 h-8 text-card opacity-70" />
+                          </div>
+                          <div className="px-3 py-2.5">
+                            <p className="text-[14px] font-medium truncate">{p.name}</p>
+                            <div className="flex gap-2 mt-2">
+                              <span className="flex-1 inline-flex items-center justify-center gap-1 text-[14px] font-semibold bg-warning text-warning-foreground px-2 py-1.5 rounded-full">
+                                <Check className="w-3.5 h-3.5" /> Zatwierdź
+                              </span>
+                              <span className="flex-1 inline-flex items-center justify-center gap-1 text-[14px] font-semibold bg-background border border-border text-muted-foreground px-2 py-1.5 rounded-full">
+                                <X className="w-3.5 h-3.5" /> Odrzuć
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Tool 8 — AI opisy */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 08
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    AI generator opisów produktów
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Kilka godzin tygodniowo na odpowiadanie na te same pytania presale w czacie — bo opisy nie zawierały podstawowych informacji.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Generuje opis według szablonu per kategoria (odzież / obuwie / streetwear), pokrywając 8 typowych pytań presale: materiał, rozciągliwość, rozmiarówka, długość na wzrost, prześwit, pielęgnacja, komfort, pasowanie.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Redukcja pytań presale w czacie. Czas generowania ~30 sekund.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-warning" />
+                    <span className="text-[14px] font-semibold">Opis produktu</span>
+                    <span className="ml-auto text-[14px] text-muted-foreground">Sukienka midi · odzież</span>
+                  </div>
+
+                  <div className="p-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      { label: "Materiał", value: "Wiskoza 95% · elastan 5%" },
+                      { label: "Długość", value: "112 cm — do połowy łydki (na 168 cm)" },
+                      { label: "Prześwit", value: "Brak — podszewka pełna" },
+                      { label: "Pielęgnacja", value: "Pranie ręczne 30°C, bez wybielacza" },
+                    ].map((f) => (
+                      <div key={f.label} className="rounded-lg border border-border bg-background px-3.5 py-2.5">
+                        <p className="text-[14px] text-muted-foreground">{f.label}</p>
+                        <p className="text-[14px] font-medium mt-0.5 leading-snug">{f.value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="px-5 pb-5">
+                    <span className="flex items-center justify-center gap-2 w-full bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full">
+                      <Sparkles className="w-4 h-4" />
+                      Wygeneruj opis dla swojego produktu
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Tool 9 — Checklist */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 09
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Checklist „Co teraz"
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Każdy sprzedawca miał dużo danych, ale nie wiedział od czego zacząć — brak priorytetyzacji prowadził do paraliżu decyzyjnego.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Generuje 3–4 konkretne akcje posortowane według wpływu na GMV, na podstawie aktualnych danych panelu. Każda akcja prowadzi bezpośrednio do narzędzia, które naprawia problem.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Zero zastanawiania się co robić — otwierasz panel i od razu działasz.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  <div className="px-5 py-3 border-b border-border flex items-center gap-2">
+                    <ListChecks className="w-4 h-4 text-warning" />
+                    <span className="text-[14px] font-semibold">Dzisiaj do zrobienia</span>
+                    <span className="ml-auto text-[14px] text-muted-foreground">4 akcje</span>
+                  </div>
+                  <ul className="divide-y divide-border">
+                    {[
+                      {
+                        Icon: PackageX,
+                        prio: "Pilne",
+                        prioTone: "warning" as const,
+                        text: "Zamów stock: sukienka midi 2 szt. · trend w szczycie za 8 dni",
+                        cta: "Zamów stock",
+                      },
+                      {
+                        Icon: ImageIcon,
+                        prio: "Ostrzeżenie",
+                        prioTone: "neutral" as const,
+                        text: "Zatwierdź 2 zdjęcia klientek w kolejce UGC",
+                        cta: "Zatwierdź",
+                      },
+                      {
+                        Icon: Tag,
+                        prio: "Ostrzeżenie",
+                        prioTone: "neutral" as const,
+                        text: "Obniż cenę szpilki beżowej: 31 dni rotacji · +12% vs mediana",
+                        cta: "Obniż cenę",
+                      },
+                      {
+                        Icon: PenLine,
+                        prio: "Info",
+                        prioTone: "muted" as const,
+                        text: "Uzupełnij opis bluzy: score 30/100 · brakuje 5 kategorii",
+                        cta: "Uzupełnij opis",
+                      },
+                    ].map((row) => (
+                      <li key={row.text} className="px-5 py-3.5 flex items-center gap-3">
+                        <span className="w-9 h-9 rounded-full bg-muted flex items-center justify-center shrink-0">
+                          <row.Icon className="w-4 h-4 text-foreground/70" />
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <span
+                            className={`inline-block text-[14px] font-semibold uppercase tracking-[1.2px] mb-1 ${
+                              row.prioTone === "warning"
+                                ? "text-warning"
+                                : row.prioTone === "neutral"
+                                ? "text-foreground/80"
+                                : "text-muted-foreground"
+                            }`}
+                          >
+                            {row.prio}
+                          </span>
+                          <p className="text-[14px] leading-snug">{row.text}</p>
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-[14px] font-semibold bg-warning text-warning-foreground px-3.5 py-2 rounded-full whitespace-nowrap">
+                          {row.cta}
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
       </div>
