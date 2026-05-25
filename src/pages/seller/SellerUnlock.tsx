@@ -380,7 +380,7 @@ export default function SellerUnlock() {
                             {row.label}
                           </span>
                         </span>
-                        <div className="flex-1 min-w-0 basis-0 sm:basis-0">
+                        <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                           <p className="text-[14px] font-medium truncate">{row.name}</p>
                           <p className="text-[14px] text-muted-foreground">{row.peak} · {row.stock}</p>
                         </div>
@@ -391,7 +391,7 @@ export default function SellerUnlock() {
                     <span className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center shrink-0">
                       <Bell className="w-4 h-4 text-foreground/70" strokeWidth={1.6} />
                     </span>
-                    <div className="flex-1 min-w-0 basis-0 sm:basis-0">
+                    <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                       <p className="text-[14px] font-semibold leading-tight">
                         Uzupełnij stock: Oversized blazer
                       </p>
@@ -617,7 +617,7 @@ export default function SellerUnlock() {
                     <span className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center shrink-0">
                       <Zap className="w-4 h-4 text-foreground/70" strokeWidth={1.6} />
                     </span>
-                    <div className="flex-1 min-w-0 basis-0 sm:basis-0">
+                    <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                       <p className="text-[14px] font-semibold leading-tight">
                         Sukienki midi: zostały 2 szt.
                       </p>
@@ -723,7 +723,7 @@ export default function SellerUnlock() {
                         <span className="w-9 h-9 rounded-full bg-warning/10 flex items-center justify-center shrink-0">
                           <r.Icon className="w-4 h-4 text-warning" />
                         </span>
-                        <div className="flex-1 min-w-0 basis-0 sm:basis-0">
+                        <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                           <p className="text-[14px] font-semibold leading-tight">
                             {r.title}{" "}
                             <span className="text-muted-foreground font-normal">· {r.pct} zwrotów</span>
@@ -825,7 +825,7 @@ export default function SellerUnlock() {
                             {row.status}
                           </span>
                         </span>
-                        <div className="flex-1 min-w-0 basis-0 sm:basis-0">
+                        <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                           <p className="text-[14px] font-medium truncate">{row.name}</p>
                           <p className="text-[14px] text-muted-foreground">{row.days}</p>
                         </div>
@@ -1165,7 +1165,7 @@ export default function SellerUnlock() {
                         <span className="w-9 h-9 rounded-full bg-muted flex items-center justify-center shrink-0">
                           <row.Icon className="w-4 h-4 text-foreground/70" />
                         </span>
-                        <div className="flex-1 min-w-0 basis-0 sm:basis-0">
+                        <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                           <span
                             className={`inline-block text-[14px] font-semibold uppercase tracking-[1.2px] mb-1 ${
                               row.prioTone === "warning"
