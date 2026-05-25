@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import SellerLanding from "./pages/seller/SellerLanding.tsx";
 import SellerFlow from "./pages/seller/SellerFlow.tsx";
+import SellerNps from "./pages/seller/SellerNps.tsx";
 import SellerUnlock from "./pages/seller/SellerUnlock.tsx";
 import SellerEvents from "./pages/seller/SellerEvents.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -23,8 +24,10 @@ const App = () => (
           {import.meta.env.DEV && (
             <Route path="/seller/_events" element={<SellerEvents />} />
           )}
-          <Route path="/seller/:profile" element={<SellerFlow />} />
+          <Route path="/seller/:profile" element={<SellerNps />} />
+          <Route path="/seller/:profile/flow" element={<SellerFlow />} />
           <Route path="/seller/:profile/unlock" element={<SellerUnlock />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
