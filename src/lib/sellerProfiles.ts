@@ -18,6 +18,12 @@ export interface SellerProfile {
   hookSub: string;
   // Sparkline data: last 8 weeks margin %
   marginWeekly: number[];
+  // Data provenance
+  dataWindowDays: number;
+  dataWindowLabel: string; // e.g. "1.02 – 30.04.2026"
+  txCount: number;
+  returnsCount: number;
+  categoryPeerCount: number;
 }
 
 export const PROFILES: Record<ProfileId, SellerProfile> = {
