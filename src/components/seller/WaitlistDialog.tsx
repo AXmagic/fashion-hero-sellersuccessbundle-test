@@ -43,7 +43,7 @@ export default function WaitlistDialog({ open, onOpenChange, profile, price }: P
             <DialogTitle className="font-serif text-2xl">Dziękujemy za zainteresowanie!</DialogTitle>
             <DialogDescription className="text-[13px] leading-relaxed text-muted-foreground">
               Właśnie dopracowujemy Seller Success Bundle, aby dostarczyć Ci jak najdokładniejsze dane.
-              Pakiet będzie dostępny już wkrótce w cenie <span className="text-foreground font-semibold">{price} zł/mies.</span> Pierwsze 14 dni bezpłatnie, rezygnacja w dowolnym momencie.
+              Pakiet będzie dostępny już wkrótce w cenie <span className="text-foreground font-semibold">{price} zł/mies.</span> Przez pierwsze 14 dni korzystasz bezpłatnie, a po zakończeniu okresu próbnego automatycznie rozpocznie się płatna subskrypcja. Rezygnacja możliwa w dowolnym momencie.
             </DialogDescription>
 
             <button
