@@ -124,7 +124,7 @@ export default function SellerUnlock() {
                 ))}
               </div>
 
-              <p className="text-[12px] text-muted-foreground mt-8 leading-relaxed max-w-md">
+              <p className="text-muted-foreground mt-8 leading-relaxed max-w-md text-sm">
                 Cena obejmuje wszystkie 9 narzędzi, bez ukrytych opłat.
                 <br />
                 Masz pytania?{" "}
@@ -151,12 +151,11 @@ export default function SellerUnlock() {
                   <span className="text-[15px] font-semibold">PLN</span>
                   <span className="text-[14px] text-muted-foreground">/ miesiąc</span>
                 </div>
-                <p className="text-[13px] text-muted-foreground mt-3 leading-relaxed">
-                  Pełny dostęp do wszystkich narzędzi analitycznych FashionHero
+                <p className="text-[13px] text-muted-foreground mt-3 leading-relaxed text-center">
+                  Pełny dostęp do wszystkich narzędzi analitycznych FashionHero. Pierwsze 14 dni bezpłatnie.
                 </p>
 
-                <p className="mt-4 text-[12.5px] leading-relaxed text-muted-foreground">
-                  <span className="font-semibold text-foreground">Pierwsze 14 dni bezpłatnie.</span>{" "}
+                <p className="mt-4 text-[12.5px] leading-relaxed text-muted-foreground text-center">
                   Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Rezygnacja możliwa w dowolnym momencie.
                 </p>
 
