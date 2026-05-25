@@ -14,6 +14,7 @@ interface Feature {
   key: string;
   title: string;
   teaser: string;
+  impact: string;
   Icon: React.ComponentType<{ className?: string }>;
   preview: React.ReactNode;
 }
