@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Navigate, useParams, useSearchParams, Link } from "react-router-dom";
-import { ChevronLeft, BarChart3, ShieldCheck, TrendingUp, Check, Lock, Sparkles, Flame, ArrowUpRight, Minus, Bell, Calculator, AlertTriangle } from "lucide-react";
+import { ChevronLeft, BarChart3, ShieldCheck, TrendingUp, Check, Lock, Sparkles, Flame, ArrowUpRight, Minus, Bell, Calculator, AlertTriangle, Zap, RotateCw, PackageX, Camera, Ruler, MessageSquare, ArrowRight } from "lucide-react";
 import SellerShell from "@/components/seller/SellerShell";
 import WaitlistDialog from "@/components/seller/WaitlistDialog";
 import { getProfile } from "@/lib/sellerProfiles";
@@ -444,6 +444,247 @@ export default function SellerUnlock() {
                     <span className="block w-full text-center bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full">
                       Aktualizuj cenę → 305 zł
                     </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Tool 3 — Stockout Alert */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 03
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Stockout Alert
+                  </h3>
+                  <p className="text-[14px] text-muted-foreground mt-1">
+                    powiązany z trendami i rotacją
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    „Sprzedało się za szybko i hype siadł. Produkcja trwa." — magazyn pusty w momencie szczytu trendu.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Łączy sygnał z Trend Feed (trend w szczycie) z sygnałem z Rotacji (fast mover, niski stan) i generuje priorytetowy alert z CTA. Oba sygnały razem → alert krytyczny. Jeden sygnał → niższy priorytet bez CTA zamawiania.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Sprzedawca nie przegapi szczytu trendu przez brak towaru.
+                  </p>
+                </div>
+              </div>
+
+              {/* Visualization */}
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  {/* Diagram */}
+                  <div className="p-5 border-b border-border">
+                    <div className="flex items-stretch gap-3">
+                      <div className="flex-1 flex flex-col gap-2">
+                        <div className="rounded-lg border border-border bg-background px-3 py-2.5">
+                          <div className="flex items-center gap-2">
+                            <TrendingUp className="w-3.5 h-3.5 text-warning" />
+                            <span className="text-[14px] font-semibold">Trend Feed</span>
+                          </div>
+                          <p className="text-[14px] text-muted-foreground mt-1 leading-snug">
+                            Sukienki midi: szczyt za 8 dni
+                          </p>
+                        </div>
+                        <div className="rounded-lg border border-border bg-background px-3 py-2.5">
+                          <div className="flex items-center gap-2">
+                            <RotateCw className="w-3.5 h-3.5 text-warning" />
+                            <span className="text-[14px] font-semibold">Rotacja</span>
+                          </div>
+                          <p className="text-[14px] text-muted-foreground mt-1 leading-snug">
+                            Fast mover · stan: 2 szt.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <ArrowRight className="w-5 h-5 text-muted-foreground" />
+                      </div>
+                      <div className="flex-1 flex items-center">
+                        <div className="w-full rounded-lg border border-warning/40 bg-warning/10 px-3 py-3">
+                          <div className="flex items-center gap-2">
+                            <PackageX className="w-4 h-4 text-warning" />
+                            <span className="text-[14px] font-semibold">Stockout Alert</span>
+                          </div>
+                          <p className="text-[14px] mt-1 leading-snug">
+                            Krytyczny: 2 sygnały aktywne
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Cases */}
+                  <div className="p-5 grid grid-cols-2 gap-2.5">
+                    {[
+                      { trend: true, rot: true, label: "Krytyczny", cta: true, tone: "warning" },
+                      { trend: true, rot: false, label: "Średni", cta: false, tone: "muted" },
+                      { trend: false, rot: true, label: "Niski", cta: false, tone: "muted" },
+                      { trend: false, rot: false, label: "Brak alertu", cta: false, tone: "off" },
+                    ].map((c, i) => (
+                      <div
+                        key={i}
+                        className={`rounded-lg border px-3 py-2.5 ${
+                          c.tone === "warning"
+                            ? "border-warning/40 bg-warning/5"
+                            : c.tone === "muted"
+                            ? "border-border bg-background"
+                            : "border-dashed border-border bg-muted/30"
+                        }`}
+                      >
+                        <div className="flex items-center gap-1.5 text-[14px]">
+                          <span className={c.trend ? "text-warning font-semibold" : "text-muted-foreground/60"}>Trend</span>
+                          <span className="text-muted-foreground">+</span>
+                          <span className={c.rot ? "text-warning font-semibold" : "text-muted-foreground/60"}>Rotacja</span>
+                        </div>
+                        <p className="text-[14px] font-semibold mt-1">{c.label}</p>
+                        <p className="text-[14px] text-muted-foreground">
+                          {c.cta ? "CTA zamów" : "bez CTA"}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <div className="px-5 py-4 bg-warning/10 border-t border-warning/30 flex items-center gap-3">
+                    <span className="w-9 h-9 rounded-full bg-warning/20 flex items-center justify-center shrink-0">
+                      <Zap className="w-4 h-4 text-warning" />
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[14px] font-semibold leading-tight">
+                        Sukienki midi: zostały 2 szt.
+                      </p>
+                      <p className="text-[14px] text-muted-foreground mt-0.5">
+                        Trend w szczycie za 8 dni.
+                      </p>
+                    </div>
+                    <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3.5 py-2 rounded-full whitespace-nowrap">
+                      Zamów natychmiast
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Tool 4 — Prawdziwy koszt zwrotów */}
+            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
+                    Narzędzie 04
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-3xl mt-2 leading-tight">
+                    Prawdziwy koszt zwrotów w PLN
+                  </h3>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Ból
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Bartek nie czuł kosztu zwrotów, bo platforma pokrywa logistykę. Widział procent — nie widział złotówek.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
+                    Co robi
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed">
+                    Pokazuje return rate jako kwotę PLN zablokowaną miesięcznie, porównuje z medianą kategorii i rozkłada zwroty na 3 główne przyczyny — z CTA do naprawy każdej z nich.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
+                    Impact
+                  </span>
+                  <p className="text-[15px] mt-2 leading-relaxed font-medium">
+                    Widoczność 8 700 zł/mies. możliwych do odzyskania przy zejściu do mediany kategorii.
+                  </p>
+                </div>
+              </div>
+
+              {/* Visualization */}
+              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+                  {/* Benchmark */}
+                  <div className="p-5 border-b border-border grid grid-cols-2 gap-3">
+                    <div className="rounded-lg border border-warning/40 bg-warning/5 px-4 py-3">
+                      <p className="text-[14px] text-muted-foreground">Twój return rate</p>
+                      <p className="font-serif text-[24px] text-warning mt-1 leading-none">28%</p>
+                      <p className="text-[14px] font-semibold mt-2">19 900 zł / mies.</p>
+                    </div>
+                    <div className="rounded-lg border border-border bg-background px-4 py-3">
+                      <p className="text-[14px] text-muted-foreground">Mediana kategorii</p>
+                      <p className="font-serif text-[24px] mt-1 leading-none">16%</p>
+                      <p className="text-[14px] font-semibold mt-2">11 200 zł / mies.</p>
+                    </div>
+                  </div>
+
+                  <div className="px-5 py-3 bg-muted/40 border-b border-border">
+                    <p className="text-[14px] leading-snug">
+                      Do odzyskania przy zejściu do mediany:{" "}
+                      <span className="font-semibold text-warning">8 700 zł / mies.</span>
+                    </p>
+                  </div>
+
+                  {/* 3 reasons */}
+                  <div className="p-5 flex flex-col gap-2.5">
+                    {[
+                      {
+                        Icon: Camera,
+                        pct: "52%",
+                        title: "Zdjęcie vs. rzeczywistość",
+                        cta: "Dodaj zdjęcia klientek (UGC)",
+                      },
+                      {
+                        Icon: Ruler,
+                        pct: "31%",
+                        title: "Niezgodność rozmiaru",
+                        cta: "Uzupełnij opis AI",
+                      },
+                      {
+                        Icon: MessageSquare,
+                        pct: "17%",
+                        title: "Pytania bez odpowiedzi",
+                        cta: "Wygeneruj pełny opis",
+                      },
+                    ].map((r) => (
+                      <div
+                        key={r.title}
+                        className="rounded-lg border border-border bg-background px-3.5 py-3 flex items-center gap-3"
+                      >
+                        <span className="w-9 h-9 rounded-full bg-warning/10 flex items-center justify-center shrink-0">
+                          <r.Icon className="w-4 h-4 text-warning" />
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[14px] font-semibold leading-tight">
+                            {r.title}{" "}
+                            <span className="text-muted-foreground font-normal">· {r.pct} zwrotów</span>
+                          </p>
+                        </div>
+                        <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3 py-1.5 rounded-full whitespace-nowrap">
+                          {r.cta}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
