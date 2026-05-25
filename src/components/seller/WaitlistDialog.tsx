@@ -43,25 +43,15 @@ export default function WaitlistDialog({ open, onOpenChange, profile, price }: P
             <DialogTitle className="font-serif text-2xl">Dziękujemy za zainteresowanie!</DialogTitle>
             <DialogDescription className="text-[13px] leading-relaxed text-muted-foreground">
               Właśnie dopracowujemy Seller Success Bundle, aby dostarczyć Ci jak najdokładniejsze dane.
-              Pakiet będzie dostępny już wkrótce w cenie <span className="text-foreground font-semibold">{price} zł/mies.</span>
+              Pakiet będzie dostępny już wkrótce w cenie <span className="text-foreground font-semibold">{price} zł/mies.</span> Pierwsze 14 dni bezpłatnie, rezygnacja w dowolnym momencie.
             </DialogDescription>
-            <p className="text-[13px] mt-1">
-              Chcesz otrzymać powiadomienie jako pierwszy i zyskać darmowy dostęp testowy?
-            </p>
 
             <button
               type="button"
               onClick={onAccept}
               className="mt-4 w-full bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full hover:opacity-90 transition-opacity"
             >
-              Tak, chcę
-            </button>
-            <button
-              type="button"
-              onClick={onDecline}
-              className="text-[12.5px] text-muted-foreground hover:text-foreground underline-offset-2 hover:underline"
-            >
-              Nie, dziękuję
+              OK
             </button>
           </div>
         ) : (
