@@ -20,7 +20,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<SellerLanding />} />
           <Route path="/seller" element={<SellerLanding />} />
-          <Route path="/seller/_events" element={<SellerEvents />} />
+          {import.meta.env.DEV && (
+            <Route path="/seller/_events" element={<SellerEvents />} />
+          )}
           <Route path="/seller/:profile" element={<SellerFlow />} />
           <Route path="/seller/:profile/unlock" element={<SellerUnlock />} />
           <Route path="*" element={<NotFound />} />
