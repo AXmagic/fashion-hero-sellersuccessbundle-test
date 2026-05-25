@@ -155,10 +155,6 @@ export default function SellerUnlock() {
                   Pełny dostęp do wszystkich narzędzi analitycznych FashionHero. Pierwsze 14 dni bezpłatnie.
                 </p>
 
-                <p className="mt-4 text-[12.5px] leading-relaxed text-muted-foreground text-center">
-                  Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Rezygnacja możliwa w dowolnym momencie.
-                </p>
-
                 <ul className="text-left mt-6 space-y-2.5">
                   {INCLUDED.map((item) => (
                     <li key={item} className="flex gap-2.5 text-[13.5px]">
@@ -176,9 +172,9 @@ export default function SellerUnlock() {
                   Aktywuj pełny dostęp
                 </button>
 
-                <p className="text-[11.5px] text-muted-foreground mt-4 inline-flex items-center gap-1.5">
-                  <Lock className="w-3 h-3" />
-                  Bez zobowiązań. Anuluj w dowolnym momencie.
+                <p className="text-[11.5px] text-muted-foreground mt-4 leading-relaxed text-center inline-flex items-start gap-1.5 justify-center">
+                  <Lock className="w-3 h-3 mt-0.5 shrink-0" />
+                  <span>Po zakończeniu okresu próbnego subskrypcja włącza się automatycznie. Bez zobowiązań — anuluj w dowolnym momencie.</span>
                 </p>
               </div>
             </div>
