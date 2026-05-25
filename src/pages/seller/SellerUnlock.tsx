@@ -183,11 +183,16 @@ export default function SellerUnlock() {
 
         {/* Dla kogo */}
         <section className="mt-16 md:mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.6px] text-muted-foreground">
+              <span className="w-6 h-px bg-border" />
+              Dla kogo
+              <span className="w-6 h-px bg-border" />
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mt-4">
               Jeden pakiet. Różne problemy. Ten sam efekt: lepsza sprzedaż.
             </h2>
-            <p className="text-[14px] text-muted-foreground mt-3">
+            <p className="text-[14px] text-muted-foreground mt-3 leading-relaxed">
               Niezależnie od tego, czy dopiero startujesz, czy sprzedajesz premium za dziesiątki tysięcy miesięcznie — Seller Success Bundle pomaga uporządkować i przyspieszyć rozwój.
             </p>
           </div>
@@ -196,10 +201,10 @@ export default function SellerUnlock() {
             {PERSONAS.map((p) => (
               <article
                 key={p.name}
-                className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
+                className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col"
               >
-                <div className="px-6 pt-6 pb-5 flex items-center gap-3.5 border-b border-border">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-muted shrink-0">
+                <div className="px-6 pt-6 pb-5 flex items-center gap-3.5 border-b border-border/40">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-muted shrink-0 ring-1 ring-border/60">
                     <img
                       src={p.photo}
                       alt={`${p.name} — ${p.meta}`}
@@ -226,7 +231,7 @@ export default function SellerUnlock() {
                     <p className="text-[15px] mt-2 leading-relaxed">{p.pain}</p>
                   </div>
 
-                  <div className="mt-auto rounded-xl bg-warning/10 border border-warning/30 p-4">
+                  <div className="mt-auto rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                     <span className="inline-flex items-center gap-1.5 text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                       Z pakietem
                     </span>
@@ -244,19 +249,24 @@ export default function SellerUnlock() {
 
         {/* Opis narzędzi */}
         <section className="mt-16 md:mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.6px] text-muted-foreground">
+              <span className="w-6 h-px bg-border" />
+              Co dostajesz
+              <span className="w-6 h-px bg-border" />
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mt-4">
               Co dokładnie dostajesz w pakiecie
             </h2>
-            <p className="text-[14px] text-muted-foreground mt-3">
+            <p className="text-[14px] text-muted-foreground mt-3 leading-relaxed">
               Każde narzędzie rozwiązuje konkretny ból sprzedawcy — i pokazuje mierzalny efekt.
             </p>
           </div>
 
           <div className="flex flex-col gap-8">
             {/* Tool 1 — Sygnały trendów */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 01
@@ -281,7 +291,7 @@ export default function SellerUnlock() {
                     Pokazuje, które produkty rosną na platformie, ile dni zostało do szczytu trendu i kiedy uzupełnić magazyn — na podstawie danych sprzedażowych i wyszukiwań FashionHero.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -292,13 +302,13 @@ export default function SellerUnlock() {
               </div>
 
               {/* Visualization */}
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
-                  <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
+                  <div className="px-6 py-4 flex items-center justify-between">
                     <span className="text-[14px] font-semibold">Aktywne sygnały trendów</span>
                     <span className="text-[14px] text-muted-foreground">tydzień 47</span>
                   </div>
-                  <ul className="divide-y divide-border">
+                  <ul className="divide-y divide-border/40">
                     {[
                       {
                         name: "Oversized blazer — beżowy",
@@ -325,18 +335,20 @@ export default function SellerUnlock() {
                         stock: "Stan: 31 szt.",
                       },
                     ].map((row) => (
-                      <li key={row.name} className="px-5 py-3.5 flex items-center gap-4">
-                        <span
-                          className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-[14px] font-semibold ${
-                            row.tone === "hot"
-                              ? "bg-warning/15 text-warning"
-                              : row.tone === "up"
-                              ? "bg-foreground/10 text-foreground"
-                              : "bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          <row.Icon className="w-3.5 h-3.5" />
-                          {row.label}
+                      <li key={row.name} className="px-6 py-4 flex items-center gap-4">
+                        <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.2px] w-[88px] shrink-0">
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              row.tone === "hot"
+                                ? "bg-warning"
+                                : row.tone === "up"
+                                ? "bg-foreground"
+                                : "bg-muted-foreground/50"
+                            }`}
+                          />
+                          <span className={row.tone === "flat" ? "text-muted-foreground" : "text-foreground"}>
+                            {row.label}
+                          </span>
                         </span>
                         <div className="flex-1 min-w-0">
                           <p className="text-[14px] font-medium truncate">{row.name}</p>
@@ -345,9 +357,9 @@ export default function SellerUnlock() {
                       </li>
                     ))}
                   </ul>
-                  <div className="px-5 py-4 bg-warning/10 border-t border-warning/30 flex items-center gap-3">
-                    <span className="w-9 h-9 rounded-full bg-warning/20 flex items-center justify-center shrink-0">
-                      <Bell className="w-4 h-4 text-warning" />
+                  <div className="px-6 py-4 bg-muted/40 border-t border-border/40 flex items-center gap-3">
+                    <span className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center shrink-0">
+                      <Bell className="w-4 h-4 text-foreground/70" strokeWidth={1.6} />
                     </span>
                     <div className="flex-1 min-w-0">
                       <p className="text-[14px] font-semibold leading-tight">
@@ -357,7 +369,7 @@ export default function SellerUnlock() {
                         Prognoza: zabraknie za 4 dni — szczyt trendu już za 6.
                       </p>
                     </div>
-                    <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3.5 py-2 rounded-full whitespace-nowrap">
+                    <span className="text-[13px] font-semibold bg-foreground text-background px-4 py-2 rounded-full whitespace-nowrap hover:opacity-90 transition-opacity">
                       Zamów +40 szt.
                     </span>
                   </div>
@@ -366,8 +378,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 2 — Benchmark cen */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 02
@@ -392,7 +404,7 @@ export default function SellerUnlock() {
                     Automatycznie porównuje cenę sprzedawcy z medianą kategorii. Kalkulator pokazuje wpływ zmiany ceny na marżę netto (z uwzględnieniem prowizji platformy) i próg break-even wolumenowy.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -403,9 +415,9 @@ export default function SellerUnlock() {
               </div>
 
               {/* Visualization */}
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
-                  <div className="px-5 py-3 border-b border-border flex items-center gap-2">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
+                  <div className="px-6 py-4 flex items-center gap-2">
                     <Calculator className="w-4 h-4 text-warning" />
                     <span className="text-[14px] font-semibold">Kalkulator break-even</span>
                     <span className="ml-auto text-[14px] text-muted-foreground">Mokasyny lakierowane</span>
@@ -420,7 +432,7 @@ export default function SellerUnlock() {
                       <div
                         key={f.label}
                         className={`rounded-lg border px-3 py-2.5 ${
-                          f.accent ? "border-warning/40 bg-warning/5" : "border-border bg-background"
+                          f.accent ? "border-l-2 border-warning bg-muted/30" : "border-border bg-background"
                         }`}
                       >
                         <p className="text-[14px] text-muted-foreground">{f.label}</p>
@@ -448,7 +460,7 @@ export default function SellerUnlock() {
                   </div>
 
                   <div className="px-5 py-4">
-                    <span className="block w-full text-center bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full">
+                    <span className="block w-full text-center bg-foreground text-background font-semibold text-[13px] py-3 rounded-full">
                       Aktualizuj cenę → 305 zł
                     </span>
                   </div>
@@ -457,8 +469,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 3 — Stockout Alert */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 03
@@ -486,7 +498,7 @@ export default function SellerUnlock() {
                     Łączy sygnał z Trend Feed (trend w szczycie) z sygnałem z Rotacji (fast mover, niski stan) i generuje priorytetowy alert z CTA. Oba sygnały razem → alert krytyczny. Jeden sygnał → niższy priorytet bez CTA zamawiania.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -497,15 +509,15 @@ export default function SellerUnlock() {
               </div>
 
               {/* Visualization */}
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
                   {/* Diagram */}
                   <div className="p-5 border-b border-border">
                     <div className="flex items-stretch gap-3">
                       <div className="flex-1 flex flex-col gap-2">
                         <div className="rounded-lg border border-border bg-background px-3 py-2.5">
                           <div className="flex items-center gap-2">
-                            <TrendingUp className="w-3.5 h-3.5 text-warning" />
+                            <TrendingUp className="w-3.5 h-3.5 text-foreground/70" strokeWidth={1.6} />
                             <span className="text-[14px] font-semibold">Trend Feed</span>
                           </div>
                           <p className="text-[14px] text-muted-foreground mt-1 leading-snug">
@@ -514,7 +526,7 @@ export default function SellerUnlock() {
                         </div>
                         <div className="rounded-lg border border-border bg-background px-3 py-2.5">
                           <div className="flex items-center gap-2">
-                            <RotateCw className="w-3.5 h-3.5 text-warning" />
+                            <RotateCw className="w-3.5 h-3.5 text-foreground/70" strokeWidth={1.6} />
                             <span className="text-[14px] font-semibold">Rotacja</span>
                           </div>
                           <p className="text-[14px] text-muted-foreground mt-1 leading-snug">
@@ -528,7 +540,7 @@ export default function SellerUnlock() {
                       <div className="flex-1 flex items-center">
                         <div className="w-full rounded-lg border border-warning/40 bg-warning/10 px-3 py-3">
                           <div className="flex items-center gap-2">
-                            <PackageX className="w-4 h-4 text-warning" />
+                            <PackageX className="w-4 h-4 text-warning" strokeWidth={1.8} />
                             <span className="text-[14px] font-semibold">Stockout Alert</span>
                           </div>
                           <p className="text-[14px] mt-1 leading-snug">
@@ -551,10 +563,10 @@ export default function SellerUnlock() {
                         key={i}
                         className={`rounded-lg border px-3 py-2.5 ${
                           c.tone === "warning"
-                            ? "border-warning/40 bg-warning/5"
+                            ? "border-l-2 border-warning bg-muted/30"
                             : c.tone === "muted"
                             ? "border-border bg-background"
-                            : "border-dashed border-border bg-muted/30"
+                            : "border-dashed border-border/50 bg-background"
                         }`}
                       >
                         <div className="flex items-center gap-1.5 text-[14px]">
@@ -571,9 +583,9 @@ export default function SellerUnlock() {
                   </div>
 
                   {/* CTA */}
-                  <div className="px-5 py-4 bg-warning/10 border-t border-warning/30 flex items-center gap-3">
-                    <span className="w-9 h-9 rounded-full bg-warning/20 flex items-center justify-center shrink-0">
-                      <Zap className="w-4 h-4 text-warning" />
+                  <div className="px-6 py-4 bg-muted/40 border-t border-border/40 flex items-center gap-3">
+                    <span className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center shrink-0">
+                      <Zap className="w-4 h-4 text-foreground/70" strokeWidth={1.6} />
                     </span>
                     <div className="flex-1 min-w-0">
                       <p className="text-[14px] font-semibold leading-tight">
@@ -583,7 +595,7 @@ export default function SellerUnlock() {
                         Trend w szczycie za 8 dni.
                       </p>
                     </div>
-                    <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3.5 py-2 rounded-full whitespace-nowrap">
+                    <span className="text-[13px] font-semibold bg-foreground text-background px-4 py-2 rounded-full whitespace-nowrap hover:opacity-90 transition-opacity">
                       Zamów natychmiast
                     </span>
                   </div>
@@ -592,8 +604,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 4 — Prawdziwy koszt zwrotów */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 04
@@ -618,7 +630,7 @@ export default function SellerUnlock() {
                     Pokazuje return rate jako kwotę PLN zablokowaną miesięcznie, porównuje z medianą kategorii i rozkłada zwroty na 3 główne przyczyny — z CTA do naprawy każdej z nich.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -629,11 +641,11 @@ export default function SellerUnlock() {
               </div>
 
               {/* Visualization */}
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
                   {/* Benchmark */}
                   <div className="p-5 border-b border-border grid grid-cols-2 gap-3">
-                    <div className="rounded-lg border border-warning/40 bg-warning/5 px-4 py-3">
+                    <div className="rounded-lg border border-l-2 border-warning bg-muted/30 px-4 py-3">
                       <p className="text-[14px] text-muted-foreground">Twój return rate</p>
                       <p className="font-serif text-[24px] text-warning mt-1 leading-none">28%</p>
                       <p className="text-[14px] font-semibold mt-2">19 900 zł / mies.</p>
@@ -687,7 +699,7 @@ export default function SellerUnlock() {
                             <span className="text-muted-foreground font-normal">· {r.pct} zwrotów</span>
                           </p>
                         </div>
-                        <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3 py-1.5 rounded-full whitespace-nowrap">
+                        <span className="text-[13px] font-semibold bg-foreground text-background px-3.5 py-1.5 rounded-full whitespace-nowrap hover:opacity-90 transition-opacity">
                           {r.cta}
                         </span>
                       </div>
@@ -698,8 +710,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 5 — Rotacja produktów */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 05
@@ -724,7 +736,7 @@ export default function SellerUnlock() {
                     Automatycznie klasyfikuje każdy produkt jako fast / mid / slow mover na podstawie tempa sprzedaży. Do każdego statusu przypisana kontekstowa akcja.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -735,13 +747,13 @@ export default function SellerUnlock() {
               </div>
 
               {/* Visualization */}
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
-                  <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
+                  <div className="px-6 py-4 flex items-center justify-between">
                     <span className="text-[14px] font-semibold">Rotacja produktów</span>
                     <span className="text-[14px] text-muted-foreground">ostatnie 30 dni</span>
                   </div>
-                  <ul className="divide-y divide-border">
+                  <ul className="divide-y divide-border/40">
                     {[
                       {
                         name: "Bluza oversize — czarna",
@@ -768,24 +780,26 @@ export default function SellerUnlock() {
                         tone: "muted" as const,
                       },
                     ].map((row) => (
-                      <li key={row.name} className="px-5 py-3.5 flex items-center gap-3">
-                        <span
-                          className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-[14px] font-semibold ${
-                            row.tone === "warning"
-                              ? "bg-warning/15 text-warning"
-                              : row.tone === "neutral"
-                              ? "bg-foreground/10 text-foreground"
-                              : "bg-muted text-muted-foreground"
-                          }`}
-                        >
-                          <row.Icon className="w-3.5 h-3.5" />
-                          {row.status}
+                      <li key={row.name} className="px-6 py-4 flex items-center gap-3">
+                        <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.2px] w-[76px] shrink-0">
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              row.tone === "warning"
+                                ? "bg-warning"
+                                : row.tone === "neutral"
+                                ? "bg-foreground"
+                                : "bg-muted-foreground/50"
+                            }`}
+                          />
+                          <span className={row.tone === "muted" ? "text-muted-foreground" : "text-foreground"}>
+                            {row.status}
+                          </span>
                         </span>
                         <div className="flex-1 min-w-0">
                           <p className="text-[14px] font-medium truncate">{row.name}</p>
                           <p className="text-[14px] text-muted-foreground">{row.days}</p>
                         </div>
-                        <span className="text-[14px] font-semibold bg-warning text-warning-foreground px-3 py-1.5 rounded-full whitespace-nowrap">
+                        <span className="text-[13px] font-semibold bg-foreground text-background px-3.5 py-1.5 rounded-full whitespace-nowrap hover:opacity-90 transition-opacity">
                           {row.cta}
                         </span>
                       </li>
@@ -796,8 +810,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 6 — Score listingu */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 06
@@ -822,7 +836,7 @@ export default function SellerUnlock() {
                     Dla każdego produktu oblicza score 0–100 w trzech wymiarach: opis, zdjęcia, cena. Wskazuje dokładnie co naprawić.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -833,9 +847,9 @@ export default function SellerUnlock() {
               </div>
 
               {/* Visualization */}
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
-                  <div className="px-5 py-3 border-b border-border flex items-center justify-between">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
+                  <div className="px-6 py-4 flex items-center justify-between">
                     <span className="text-[14px] font-semibold">Score listingu</span>
                     <span className="text-[14px] text-muted-foreground">Bluza streetwear #SW-104</span>
                   </div>
@@ -868,7 +882,7 @@ export default function SellerUnlock() {
                   </div>
 
                   <div className="px-5 pb-5">
-                    <span className="flex items-center justify-center gap-2 w-full bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full">
+                    <span className="flex items-center justify-center gap-2 w-full bg-foreground text-background font-semibold text-[13px] py-3 rounded-full">
                       <Wand2 className="w-4 h-4" />
                       Popraw opis, zdjęcia i cenę
                     </span>
@@ -878,8 +892,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 7 — UGC */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 07
@@ -904,7 +918,7 @@ export default function SellerUnlock() {
                     Automatyczna prośba o zdjęcie po zakupie (e-mail po 10 dniach od dostawy) z voucherem 5% dla kupującej. Sprzedawca zatwierdza każde zdjęcie przed publikacją.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -914,16 +928,16 @@ export default function SellerUnlock() {
                 </div>
               </div>
 
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
                   <div className="p-5 border-b border-border">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-[14px] font-semibold">Automatyzacja UGC</span>
                       <span className="inline-flex items-center gap-2 text-[14px]">
-                        <span className="relative inline-block w-9 h-5 rounded-full bg-warning">
+                        <span className="relative inline-block w-9 h-5 rounded-full bg-foreground">
                           <span className="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-card" />
                         </span>
-                        <span className="text-warning font-semibold">ON</span>
+                        <span className="text-foreground font-semibold uppercase tracking-[1.2px] text-[11px]">ON</span>
                       </span>
                     </div>
                     <div className="grid grid-cols-3 gap-2.5">
@@ -957,7 +971,7 @@ export default function SellerUnlock() {
                           <div className="px-3 py-2.5">
                             <p className="text-[14px] font-medium truncate">{p.name}</p>
                             <div className="flex gap-2 mt-2">
-                              <span className="flex-1 inline-flex items-center justify-center gap-1 text-[14px] font-semibold bg-warning text-warning-foreground px-2 py-1.5 rounded-full">
+                              <span className="flex-1 inline-flex items-center justify-center gap-1 text-[13px] font-semibold bg-foreground text-background px-2 py-1.5 rounded-full">
                                 <Check className="w-3.5 h-3.5" /> Zatwierdź
                               </span>
                               <span className="flex-1 inline-flex items-center justify-center gap-1 text-[14px] font-semibold bg-background border border-border text-muted-foreground px-2 py-1.5 rounded-full">
@@ -974,8 +988,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 8 — AI opisy */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border lg:order-2">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40 lg:order-2">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 08
@@ -1000,7 +1014,7 @@ export default function SellerUnlock() {
                     Generuje opis według szablonu per kategoria (odzież / obuwie / streetwear), pokrywając 8 typowych pytań presale: materiał, rozciągliwość, rozmiarówka, długość na wzrost, prześwit, pielęgnacja, komfort, pasowanie.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -1010,9 +1024,9 @@ export default function SellerUnlock() {
                 </div>
               </div>
 
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center lg:order-1">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
-                  <div className="px-5 py-3 border-b border-border flex items-center gap-2">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center lg:order-1">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
+                  <div className="px-6 py-4 flex items-center gap-2">
                     <FileText className="w-4 h-4 text-warning" />
                     <span className="text-[14px] font-semibold">Opis produktu</span>
                     <span className="ml-auto text-[14px] text-muted-foreground">Sukienka midi · odzież</span>
@@ -1033,7 +1047,7 @@ export default function SellerUnlock() {
                   </div>
 
                   <div className="px-5 pb-5">
-                    <span className="flex items-center justify-center gap-2 w-full bg-warning text-warning-foreground font-semibold text-[14px] py-3 rounded-full">
+                    <span className="flex items-center justify-center gap-2 w-full bg-foreground text-background font-semibold text-[13px] py-3 rounded-full">
                       <Sparkles className="w-4 h-4" />
                       Wygeneruj opis dla swojego produktu
                     </span>
@@ -1043,8 +1057,8 @@ export default function SellerUnlock() {
             </article>
 
             {/* Tool 9 — Checklist */}
-            <article className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border">
+            <article className="bg-card rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="p-8 md:p-10 flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-border/40">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-[1.6px] text-warning">
                     Narzędzie 09
@@ -1069,7 +1083,7 @@ export default function SellerUnlock() {
                     Generuje 3–4 konkretne akcje posortowane według wpływu na GMV, na podstawie aktualnych danych panelu. Każda akcja prowadzi bezpośrednio do narzędzia, które naprawia problem.
                   </p>
                 </div>
-                <div className="rounded-xl bg-warning/10 border border-warning/30 p-4">
+                <div className="rounded-lg bg-muted/40 border-l-2 border-warning pl-4 pr-4 py-3.5">
                   <span className="text-[14px] font-semibold uppercase tracking-[1.4px] text-warning">
                     Impact
                   </span>
@@ -1079,14 +1093,14 @@ export default function SellerUnlock() {
                 </div>
               </div>
 
-              <div className="bg-muted/30 p-6 md:p-8 flex items-center">
-                <div className="w-full bg-card border border-border rounded-xl shadow-sm overflow-hidden">
-                  <div className="px-5 py-3 border-b border-border flex items-center gap-2">
+              <div className="bg-gradient-to-br from-muted/40 via-background to-muted/20 p-6 md:p-8 flex items-center">
+                <div className="w-full bg-card rounded-xl ring-1 ring-border/40 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.18)] overflow-hidden">
+                  <div className="px-6 py-4 flex items-center gap-2">
                     <ListChecks className="w-4 h-4 text-warning" />
                     <span className="text-[14px] font-semibold">Dzisiaj do zrobienia</span>
                     <span className="ml-auto text-[14px] text-muted-foreground">4 akcje</span>
                   </div>
-                  <ul className="divide-y divide-border">
+                  <ul className="divide-y divide-border/40">
                     {[
                       {
                         Icon: PackageX,
@@ -1117,7 +1131,7 @@ export default function SellerUnlock() {
                         cta: "Uzupełnij opis",
                       },
                     ].map((row) => (
-                      <li key={row.text} className="px-5 py-3.5 flex items-center gap-3">
+                      <li key={row.text} className="px-6 py-4 flex items-center gap-3">
                         <span className="w-9 h-9 rounded-full bg-muted flex items-center justify-center shrink-0">
                           <row.Icon className="w-4 h-4 text-foreground/70" />
                         </span>
@@ -1135,7 +1149,7 @@ export default function SellerUnlock() {
                           </span>
                           <p className="text-[14px] leading-snug">{row.text}</p>
                         </div>
-                        <span className="inline-flex items-center gap-1 text-[14px] font-semibold bg-warning text-warning-foreground px-3.5 py-2 rounded-full whitespace-nowrap">
+                        <span className="inline-flex items-center gap-1 text-[13px] font-semibold bg-foreground text-background px-4 py-2 rounded-full whitespace-nowrap hover:opacity-90 transition-opacity">
                           {row.cta}
                           <ArrowRight className="w-3.5 h-3.5" />
                         </span>
