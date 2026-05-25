@@ -65,6 +65,11 @@ export const PROFILES: Record<ProfileId, SellerProfile> = {
     hookHeadline: "Zwroty kosztowały Cię w tym miesiącu 3 400 PLN",
     hookSub: "Zarabiasz na sukienkach, a oddajesz to samo na zwrotach. Sprawdź dlaczego.",
     marginWeekly: [33, 34, 32, 33, 31, 32, 30, 31],
+    dataWindowDays: 60,
+    dataWindowLabel: "1.03 – 30.04.2026",
+    txCount: 612,
+    returnsCount: 269,
+    categoryPeerCount: 1840,
   },
   kamil: {
     id: "kamil",
