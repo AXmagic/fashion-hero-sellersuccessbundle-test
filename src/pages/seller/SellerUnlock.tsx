@@ -191,37 +191,43 @@ export default function SellerUnlock() {
                 key={p.name}
                 className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
               >
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={p.photo}
-                    alt={`${p.name} — ${p.meta}`}
-                    loading="lazy"
-                    width={768}
-                    height={576}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="p-6 flex items-center gap-3 border-b border-border">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-muted shrink-0 opacity-80">
+                    <img
+                      src={p.photo}
+                      alt={`${p.name} — ${p.meta}`}
+                      loading="lazy"
+                      width={96}
+                      height={96}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-[14px] font-medium text-muted-foreground leading-tight">
+                      {p.name}
+                    </h3>
+                    <p className="text-[11.5px] text-muted-foreground/80 mt-0.5 truncate">
+                      {p.meta}
+                    </p>
+                  </div>
                 </div>
                 <div className="p-6 flex flex-col gap-4 flex-1">
-                  <div>
-                    <h3 className="font-serif text-2xl leading-tight">{p.name}</h3>
-                    <p className="text-[12.5px] text-muted-foreground mt-1">{p.meta}</p>
-                  </div>
-
                   <div>
                     <span className="text-[10.5px] font-semibold uppercase tracking-[1.4px] text-muted-foreground">
                       Ból
                     </span>
-                    <p className="text-[13.5px] mt-1.5 leading-relaxed">{p.pain}</p>
+                    <p className="text-[15px] mt-1.5 leading-relaxed font-medium">{p.pain}</p>
                   </div>
 
                   <div className="mt-auto pt-4 border-t border-border">
                     <span className="text-[10.5px] font-semibold uppercase tracking-[1.4px] text-warning">
                       Z pakietem
                     </span>
-                    <p className="text-[13.5px] mt-1.5 leading-relaxed">{p.gain}</p>
+                    <p className="text-[15px] mt-1.5 leading-relaxed font-medium">{p.gain}</p>
                   </div>
                 </div>
               </article>
+
             ))}
           </div>
         </section>
