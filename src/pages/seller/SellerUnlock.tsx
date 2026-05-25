@@ -6,6 +6,37 @@ import WaitlistDialog from "@/components/seller/WaitlistDialog";
 import { getProfile } from "@/lib/sellerProfiles";
 import { getSessionPrice } from "@/lib/wtpPrice";
 import { logEvent } from "@/lib/wtpLog";
+import personaBartek from "@/assets/persona-bartek.jpg";
+import personaDorota from "@/assets/persona-dorota.jpg";
+import personaKamil from "@/assets/persona-kamil.jpg";
+
+const PERSONAS = [
+  {
+    name: "Bartek",
+    meta: "Premium odzież · 45k zł GMV/mies.",
+    photo: personaBartek,
+    pain:
+      "Tracił 7 godz./tydzień na ręczne śledzenie trendów. Nie widział, że 19 900 zł ginie miesięcznie w zwrotach.",
+    gain: "Sygnały trendów i UGC obniżają zwroty o 13 pp.",
+  },
+  {
+    name: "Dorota",
+    meta: "Obuwie · top 11% return rate na platformie",
+    photo: personaDorota,
+    pain:
+      "5 godz./tydzień w Excelu na śledzenie cen. Nie wiedziała, że jest jednym z najcenniejszych sprzedawców platformy.",
+    gain: "Automatyczny benchmark z kalkulatorem break-even.",
+  },
+  {
+    name: "Kamil",
+    meta: "Streetwear · nowy seller, ryzyko churnu",
+    photo: personaKamil,
+    pain:
+      "Pozycja #247 w kategorii. Algorytm go nie widział — błędne koło braku danych.",
+    gain: "Score listingu + AI opisy = lepsza konwersja bez przepalania budżetu.",
+  },
+];
+
 
 const INCLUDED = [
   "Sygnały trendów — bądź przed rynkiem",
