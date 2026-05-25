@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Navigate, useParams, useSearchParams, Link } from "react-router-dom";
-import { ChevronLeft, BarChart3, ShieldCheck, TrendingUp, Check, Lock, Sparkles, Flame, ArrowUpRight, Minus, Bell, Calculator, AlertTriangle, Zap, RotateCw, PackageX, Camera, Ruler, MessageSquare, ArrowRight } from "lucide-react";
+import { ChevronLeft, BarChart3, ShieldCheck, TrendingUp, Check, Lock, Sparkles, Flame, ArrowUpRight, Minus, Bell, Calculator, AlertTriangle, Zap, RotateCw, PackageX, Camera, Ruler, MessageSquare, ArrowRight, Rabbit, Turtle, Wand2 } from "lucide-react";
 import SellerShell from "@/components/seller/SellerShell";
 import WaitlistDialog from "@/components/seller/WaitlistDialog";
 import { getProfile } from "@/lib/sellerProfiles";
