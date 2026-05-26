@@ -75,7 +75,7 @@ export default function SellerNps() {
               Cześć {profile.name},
             </p>
             <p className="text-[15px] text-muted-foreground">
-              Zerknęłaś już na swoje dane w FashionHero — chcielibyśmy poznać Twoją pierwszą reakcję.
+              Rozwijasz swój sklep na FashionHero już od jakiegoś czasu i chcielibyśmy usłyszeć, jak Ci idzie
             </p>
           </div>
 
