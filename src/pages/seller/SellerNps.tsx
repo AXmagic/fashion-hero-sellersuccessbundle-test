@@ -70,7 +70,7 @@ export default function SellerNps() {
             />
           </div>
 
-          <div className="mt-6 space-y-3 text-left max-w-md mx-auto">
+          <div className="mt-6 space-y-3 text-left">
             <p className="text-base text-muted-foreground">
               Cześć {profile.name},
             </p>
