@@ -106,6 +106,9 @@ export default function SellerNps() {
               <span>Wcale</span>
               <span>Zdecydowanie tak</span>
             </div>
+            <p className="mt-6 text-[13px] text-muted-foreground">
+              Dziękujemy! Twoja szczera opinia pomaga nam ulepszać platformę dla sprzedawców.
+            </p>
           </div>
 
           <button
