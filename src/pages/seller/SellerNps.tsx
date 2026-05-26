@@ -71,10 +71,10 @@ export default function SellerNps() {
           </div>
 
           <div className="mt-6 space-y-3 text-left max-w-md mx-auto">
-            <p className="text-[15px] text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               Cześć {profile.name},
             </p>
-            <p className="text-[15px] text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               Rozwijasz swój sklep na FashionHero już od jakiegoś czasu i chcielibyśmy usłyszeć, jak Ci idzie
             </p>
           </div>
