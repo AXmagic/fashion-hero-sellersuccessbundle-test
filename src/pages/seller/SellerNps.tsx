@@ -5,6 +5,7 @@ import { getProfile } from "@/lib/sellerProfiles";
 import { getSessionPrice } from "@/lib/wtpPrice";
 import { logEvent } from "@/lib/wtpLog";
 import { setNps } from "@/lib/npsStore";
+import npsIllustration from "@/assets/nps-marketplace.png";
 
 const SCALE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -54,9 +55,34 @@ export default function SellerNps() {
 
       <main className="flex-1 flex items-center justify-center px-5 md:px-10 py-10">
         <div className="max-w-2xl w-full text-center">
-          <h1 className="font-serif text-3xl md:text-[40px] leading-[1.15]">
-            Jak bardzo polecałbyś/polecałabyś FashionHero innemu sprzedawcy?
+          <h1 className="font-serif text-3xl md:text-[44px] leading-[1.1]">
+            Jedno krótkie <em className="italic">pytanie</em> do Ciebie
           </h1>
+
+          <div className="mt-8 flex justify-center">
+            <img
+              src={npsIllustration}
+              alt="Ilustracja małego sklepu z ubraniami i torbą zakupową"
+              width={420}
+              height={350}
+              loading="lazy"
+              className="w-[280px] md:w-[360px] h-auto"
+            />
+          </div>
+
+          <div className="mt-6 space-y-3 text-left max-w-md mx-auto">
+            <p className="text-[15px] text-muted-foreground">
+              Cześć {profile.name},
+            </p>
+            <p className="text-[15px] text-muted-foreground">
+              Zerknęłaś już na swoje dane w FashionHero — chcielibyśmy poznać Twoją pierwszą reakcję.
+            </p>
+          </div>
+
+          <h2 className="mt-8 font-serif text-xl md:text-2xl leading-snug">
+            Jak bardzo poleciłbyś/poleciłabyś FashionHero innemu sprzedawcy?
+          </h2>
+
 
 
           <div className="mt-10">
@@ -80,6 +106,9 @@ export default function SellerNps() {
               <span>Wcale</span>
               <span>Zdecydowanie tak</span>
             </div>
+            <p className="mt-6 text-[13px] text-muted-foreground">
+              Dziękujemy! Twoja szczera opinia pomaga nam ulepszać platformę dla sprzedawców.
+            </p>
           </div>
 
           <button
