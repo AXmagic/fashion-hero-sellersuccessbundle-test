@@ -93,15 +93,33 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["Archivo", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        // Map legacy `font-serif` usages onto the new editorial display face
-        serif: ["Archivo", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)"],
+        display: ["var(--font-display)"],
+        // Map legacy `font-serif` usages onto the new editorial display face (Fraunces)
+        serif: ["var(--font-display)"],
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm: "var(--radius-sm)",
+        DEFAULT: "var(--radius)",
+        md: "var(--radius-md)",
+        lg: "var(--radius-lg)",
+        xl: "var(--radius-xl)",
+      },
+      boxShadow: {
+        sm: "var(--shadow-sm)",
+        DEFAULT: "var(--shadow-md)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        xl: "var(--shadow-xl)",
+      },
+      transitionDuration: {
+        fast: "var(--duration-fast)",
+        base: "var(--duration-base)",
+        slow: "var(--duration-slow)",
+      },
+      transitionTimingFunction: {
+        out: "var(--ease-out)",
+        "in-out": "var(--ease-in-out)",
       },
       keyframes: {
         "accordion-down": {
