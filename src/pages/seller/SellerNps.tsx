@@ -5,6 +5,7 @@ import { getProfile } from "@/lib/sellerProfiles";
 import { getSessionPrice } from "@/lib/wtpPrice";
 import { logEvent } from "@/lib/wtpLog";
 import { setNps } from "@/lib/npsStore";
+import npsIllustration from "@/assets/nps-marketplace.png";
 
 const SCALE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
